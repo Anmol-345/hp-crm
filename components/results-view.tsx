@@ -5,8 +5,10 @@ import Link from "next/link";
 import { Result, Event } from "@/lib/data/types";
 import { publishEventResults } from "@/lib/data/results";
 import { PodiumCard } from "./podium-card";
+import { PodiumPhotoCard } from "./podium-photo-card";
 import { ResultsTable } from "./results-table";
-import { Trophy, Plus, Check, Filter, Loader2 } from "lucide-react";
+import { Trophy, Plus, Check, Filter, Loader2, Camera, Sparkles } from "lucide-react";
+import { savePodiumPhotoForEvent } from "@/lib/data/photos";
 
 interface ResultsViewProps {
   initialResults: Result[];
@@ -35,6 +37,7 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
   const [pos3Unit, setPos3Unit] = useState("Visakh Refinery");
   const [pos3Perf, setPos3Perf] = useState("");
 
+  const [formPodiumPhotoUrl, setFormPodiumPhotoUrl] = useState("");
   const [isPublishing, setIsPublishing] = useState(false);
 
   const targetEvent = events.find((e) => e.eventNo === formEventNo);
@@ -139,6 +142,17 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
         : []),
     ];
 
+    // If a podium photo was provided, save it
+    if (formPodiumPhotoUrl) {
+      await savePodiumPhotoForEvent(
+        formEventNo,
+        targetEvent?.name || `Event ${formEventNo}`,
+        formPodiumPhotoUrl,
+        `Official Top 3 Podium: 🥇 ${pos1Name}${pos2Name ? `, 🥈 ${pos2Name}` : ""}${pos3Name ? `, 🥉 ${pos3Name}` : ""}`,
+        [pos1Name, pos2Name, pos3Name].filter(Boolean)
+      );
+    }
+
     // Remove any previous results for this event and append new ones
     setResults((prev) => [
       ...prev.filter((r) => r.eventNo !== formEventNo),
@@ -146,6 +160,7 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
     ]);
 
     setIsPublishing(false);
+    setFormPodiumPhotoUrl("");
     setShowAddForm(false);
     setSelectedEventNo(formEventNo);
   };
@@ -363,6 +378,24 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
             </div>
           </div>
 
+          {/* Optional Podium Ceremony Photo */}
+          <div className="rounded-lg border border-border bg-muted/20 p-3 space-y-2">
+            <div className="flex items-center justify-between text-xs font-bold text-foreground">
+              <span className="flex items-center gap-1.5">
+                <Camera className="size-3.5 text-hp-navy dark:text-primary" />
+                Optional: Top 3 Victory Ceremony Photo
+              </span>
+              <span className="text-[10px] text-muted-foreground font-normal">URL or leave blank to upload later</span>
+            </div>
+            <input
+              type="url"
+              placeholder="Paste photo URL (or leave blank to upload file after publishing)"
+              value={formPodiumPhotoUrl}
+              onChange={(e) => setFormPodiumPhotoUrl(e.target.value)}
+              className="w-full rounded border border-border bg-background p-2 text-xs focus:border-hp-navy focus:outline-none"
+            />
+          </div>
+
           <div className="flex justify-end gap-2">
             <button
               type="submit"
@@ -424,6 +457,15 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
                   Event Detail & Cash Cards →
                 </Link>
               </div>
+
+              {/* Top 3 Victory Ceremony Photo */}
+              <PodiumPhotoCard
+                eventNo={no}
+                eventName={event?.name || `Event ${no}`}
+                pos1Name={pos1?.athleteName}
+                pos2Name={pos2?.athleteName}
+                pos3Name={pos3?.athleteName}
+              />
 
               {/* Podium Display (3 cards) */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">

@@ -5,3 +5,4 @@ export * from "./heats";
 export * from "./results";
 export * from "./cash-cards";
 export * from "./units";
+export * from "./photos";

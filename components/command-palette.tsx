@@ -13,6 +13,7 @@ import {
   BarChart3,
   X,
   ArrowRight,
+  Camera,
 } from "lucide-react";
 import { mockEvents, mockAthletes, mockUnits } from "@/lib/data/mock-data";
 
@@ -51,6 +52,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
     { name: "Published Results", href: "/results", icon: Trophy, category: "Navigation" },
     { name: "Cash Card Sheet (Format 3)", href: "/cash-cards", icon: CreditCard, category: "Navigation" },
     { name: "Units & Zones Medal Tally", href: "/units", icon: Building2, category: "Navigation" },
+    { name: "Event Photo Gallery", href: "/gallery", icon: Camera, category: "Navigation" },
     { name: "Disbursement Reports", href: "/reports", icon: BarChart3, category: "Navigation" },
   ].filter((item) => item.name.toLowerCase().includes(q));
 

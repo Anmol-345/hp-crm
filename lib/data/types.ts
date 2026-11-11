@@ -110,3 +110,25 @@ export interface Unit {
   zone: string;
 }
 
+export type PhotoCategory =
+  | "Podium & Top 3"
+  | "Track & Sprints"
+  | "Field Events"
+  | "Ceremonies";
+
+export interface EventPhoto {
+  id: string;
+  title: string;
+  caption?: string;
+  url: string;
+  eventNo?: number;
+  eventName?: string;
+  category: PhotoCategory;
+  day?: DayOption;
+  photographer?: string;
+  taggedAthletes?: string[];
+  createdAt: string;
+  isPodiumPhoto?: boolean;
+}
+
+
