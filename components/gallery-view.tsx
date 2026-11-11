@@ -888,3 +888,4 @@ export function GalleryView({ initialPhotos, events }: GalleryViewProps) {
 }
 
 export default GalleryView;
+

@@ -70,7 +70,7 @@ export function PodiumPhotoCard({
 
   useEffect(() => {
     let mounted = true;
-    getPodiumPhotoForEvent(eventNo).then((p) => {
+    getPodiumPhotoForEvent(eventNo, eventName, pos1Name, pos2Name, pos3Name).then((p) => {
       if (mounted) {
         setPhoto(p);
         setIsLoading(false);
@@ -79,7 +79,7 @@ export function PodiumPhotoCard({
     return () => {
       mounted = false;
     };
-  }, [eventNo]);
+  }, [eventNo, eventName, pos1Name, pos2Name, pos3Name]);
 
   const defaultCaption = [
     pos1Name ? `🥇 1st: ${pos1Name}` : "",
@@ -500,3 +500,4 @@ export function PodiumPhotoCard({
 }
 
 export default PodiumPhotoCard;
+

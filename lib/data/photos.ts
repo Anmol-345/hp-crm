@@ -1,9 +1,8 @@
 import { EventPhoto, PhotoCategory, DayOption } from "./types";
 
-export const INITIAL_EVENT_PHOTOS: EventPhoto[] = [
-  {
-    id: "photo-podium-1",
-    title: "Men's 100m Final Victory Ceremony",
+export const MOCK_PODIUM_PHOTOS_BY_EVENT: Record<number, Omit<EventPhoto, "id" | "createdAt">> = {
+  1: {
+    title: "100m Men (Below 45) Victory Ceremony",
     caption: "Top 3 Podium: 🥇 Amit Sharma (MR), 🥈 Rajesh Kumar (SCZ), 🥉 Sunil Verma (VR)",
     url: "https://images.unsplash.com/photo-1569517282132-25d22f4573e6?auto=format&fit=crop&w=1200&q=80",
     eventNo: 1,
@@ -12,22 +11,83 @@ export const INITIAL_EVENT_PHOTOS: EventPhoto[] = [
     day: "28 Feb 2025",
     photographer: "Official HP Media Cell",
     taggedAthletes: ["Amit Sharma", "Rajesh Kumar", "Sunil Verma"],
-    createdAt: "2025-02-28T10:45:00Z",
     isPodiumPhoto: true,
   },
-  {
-    id: "photo-podium-2",
-    title: "Women's 100m Medal Presentation",
-    caption: "Top 3 Podium: 🥇 Priya Nair (SZ), 🥈 Neha Patil (WZ), 🥉 Kavita Das (EZ)",
-    url: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80",
+  2: {
+    title: "200m Men (Below 45) Victory Ceremony",
+    caption: "Top 3 Podium: 🥇 Mannem Sivanageswara (MR), 🥈 Abhinav Singh (MR), 🥉 Pushparaj (SCZ)",
+    url: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80",
     eventNo: 2,
-    eventName: "100 Mtrs Women (Below 40)",
+    eventName: "200 Mtrs Men (Below 45)",
     category: "Podium & Top 3",
     day: "28 Feb 2025",
     photographer: "Official HP Media Cell",
-    taggedAthletes: ["Priya Nair", "Neha Patil", "Kavita Das"],
-    createdAt: "2025-02-28T11:15:00Z",
+    taggedAthletes: ["Mannem Sivanageswara", "Abhinav Singh", "Pushparaj"],
     isPodiumPhoto: true,
+  },
+  8: {
+    title: "400m Men (45–55) Veteran Victory Ceremony",
+    caption: "Top 3 Podium: 🥇 Narayana Moolya (SCZ), 🥈 Rajesh K Shetty (SCZ), 🥉 Das Biswanath (EZ)",
+    url: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80",
+    eventNo: 8,
+    eventName: "400 Mtrs Men (45 to below 55)",
+    category: "Podium & Top 3",
+    day: "28 Feb 2025",
+    photographer: "S. K. Raman",
+    taggedAthletes: ["Narayana Moolya", "Rajesh K Shetty", "Das Biswanath"],
+    isPodiumPhoto: true,
+  },
+  18: {
+    title: "Men's Javelin Throw Official Victory Podium",
+    caption: "Top 3 Podium: 🥇 Khuntia P.A. Asitkanta (PH), 🥈 Potluri Durga Prasad (VR), 🥉 Ramath Mallikarjuna Naik (NWZ)",
+    url: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80",
+    eventNo: 18,
+    eventName: "Javelin Men (Below 45)",
+    category: "Podium & Top 3",
+    day: "28 Feb 2025",
+    photographer: "A. Sengupta",
+    taggedAthletes: ["Khuntia P.A. Asitkanta", "Potluri Durga Prasad", "Ramath Mallikarjuna Naik"],
+    isPodiumPhoto: true,
+  },
+  48: {
+    title: "Women's Javelin Throw Victory Podium",
+    caption: "Top 3 Podium: 🥇 J Jnapika (VR) and podium finalists celebrating medals",
+    url: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80",
+    eventNo: 48,
+    eventName: "Javelin Women (Below 40)",
+    category: "Podium & Top 3",
+    day: "1 Mar 2025",
+    photographer: "P. Deshmukh",
+    taggedAthletes: ["J Jnapika"],
+    isPodiumPhoto: true,
+  },
+};
+
+export const INITIAL_EVENT_PHOTOS: EventPhoto[] = [
+  {
+    id: "photo-podium-2",
+    ...MOCK_PODIUM_PHOTOS_BY_EVENT[2],
+    createdAt: "2025-02-28T11:30:00Z",
+  },
+  {
+    id: "photo-podium-8",
+    ...MOCK_PODIUM_PHOTOS_BY_EVENT[8],
+    createdAt: "2025-02-28T16:00:00Z",
+  },
+  {
+    id: "photo-podium-18",
+    ...MOCK_PODIUM_PHOTOS_BY_EVENT[18],
+    createdAt: "2025-02-28T17:15:00Z",
+  },
+  {
+    id: "photo-podium-48",
+    ...MOCK_PODIUM_PHOTOS_BY_EVENT[48],
+    createdAt: "2025-03-01T11:45:00Z",
+  },
+  {
+    id: "photo-podium-1",
+    ...MOCK_PODIUM_PHOTOS_BY_EVENT[1],
+    createdAt: "2025-02-28T10:45:00Z",
   },
   {
     id: "photo-track-1",
@@ -41,19 +101,6 @@ export const INITIAL_EVENT_PHOTOS: EventPhoto[] = [
     photographer: "S. K. Raman",
     taggedAthletes: ["Amit Sharma", "Rohan Mehta"],
     createdAt: "2025-02-28T09:20:00Z",
-  },
-  {
-    id: "photo-track-2",
-    title: "Starting Gun Ready — Men's 200m Heats",
-    caption: "Lanes 2 through 6 in 'Set' position ahead of the starter pistol.",
-    url: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80",
-    eventNo: 3,
-    eventName: "200 Mtrs Men (Below 45)",
-    category: "Track & Sprints",
-    day: "28 Feb 2025",
-    photographer: "P. Deshmukh",
-    taggedAthletes: ["Vikram Singh", "Deepak Joshi"],
-    createdAt: "2025-02-28T14:10:00Z",
   },
   {
     id: "photo-track-3",
@@ -80,32 +127,6 @@ export const INITIAL_EVENT_PHOTOS: EventPhoto[] = [
     photographer: "A. Sengupta",
     taggedAthletes: ["Ramesh Kulkarni"],
     createdAt: "2025-02-28T15:40:00Z",
-  },
-  {
-    id: "photo-field-2",
-    title: "Shot Put Maximum Effort Release",
-    caption: "7.26kg iron sphere release in Men's Shot Put finals.",
-    url: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80",
-    eventNo: 9,
-    eventName: "Shot Put Men (Below 45)",
-    category: "Field Events",
-    day: "28 Feb 2025",
-    photographer: "S. K. Raman",
-    taggedAthletes: ["Balwinder Singh"],
-    createdAt: "2025-02-28T16:15:00Z",
-  },
-  {
-    id: "photo-field-3",
-    title: "High Jump Bar Clearance at 1.80m",
-    caption: "Fosbury flop clearance in the Men's Veteran High Jump.",
-    url: "https://images.unsplash.com/photo-1519766304817-4f37bda74a29?auto=format&fit=crop&w=1200&q=80",
-    eventNo: 11,
-    eventName: "High Jump Men (Below 45)",
-    category: "Field Events",
-    day: "1 Mar 2025",
-    photographer: "P. Deshmukh",
-    taggedAthletes: ["Manoj Tiwari"],
-    createdAt: "2025-03-01T10:00:00Z",
   },
   {
     id: "photo-ceremony-1",
@@ -148,14 +169,61 @@ export async function getEventPhotos(): Promise<EventPhoto[]> {
 }
 
 /**
- * Get podium photo for a specific event
+ * Get podium photo for a specific event (with guaranteed mock fallback)
  */
-export async function getPodiumPhotoForEvent(eventNo: number): Promise<EventPhoto | null> {
+export async function getPodiumPhotoForEvent(
+  eventNo: number,
+  fallbackEventName?: string,
+  pos1Name?: string,
+  pos2Name?: string,
+  pos3Name?: string
+): Promise<EventPhoto> {
   const allPhotos = await getEventPhotos();
   const found = allPhotos.find(
     (p) => p.eventNo === eventNo && p.isPodiumPhoto
   );
-  return found || null;
+  if (found) return found;
+
+  // Check preset mock data by event number
+  if (MOCK_PODIUM_PHOTOS_BY_EVENT[eventNo]) {
+    return {
+      id: `photo-podium-${eventNo}`,
+      ...MOCK_PODIUM_PHOTOS_BY_EVENT[eventNo],
+      createdAt: new Date().toISOString(),
+    };
+  }
+
+  // Fallback mock image
+  const defaultImages = [
+    "https://images.unsplash.com/photo-1569517282132-25d22f4573e6?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80",
+  ];
+  const chosenUrl = defaultImages[eventNo % defaultImages.length];
+
+  const captionWinners = [
+    pos1Name ? `🥇 1st: ${pos1Name}` : "",
+    pos2Name ? `🥈 2nd: ${pos2Name}` : "",
+    pos3Name ? `🥉 3rd: ${pos3Name}` : "",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  return {
+    id: `photo-podium-auto-${eventNo}`,
+    title: `Top 3 Victory Ceremony — Event #${eventNo}`,
+    caption: captionWinners || `Official Victory Podium for ${fallbackEventName || `Event ${eventNo}`}`,
+    url: chosenUrl,
+    eventNo,
+    eventName: fallbackEventName || `Event ${eventNo}`,
+    category: "Podium & Top 3",
+    day: "28 Feb 2025",
+    photographer: "Official HP Media Cell",
+    taggedAthletes: [pos1Name, pos2Name, pos3Name].filter(Boolean) as string[],
+    createdAt: new Date().toISOString(),
+    isPodiumPhoto: true,
+  };
 }
 
 /**
@@ -186,7 +254,6 @@ export async function savePodiumPhotoForEvent(
   if (typeof window !== "undefined") {
     try {
       const existing = await getEventPhotos();
-      // Filter out previous podium photo for this event if exists
       const filtered = existing.filter(
         (p) => !(p.eventNo === eventNo && p.isPodiumPhoto)
       );

@@ -18,3 +18,4 @@ export default async function GalleryPage() {
 
   return <GalleryView initialPhotos={photos} events={events} />;
 }
+

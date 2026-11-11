@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { Result, Event } from "@/lib/data/types";
 import { publishEventResults } from "@/lib/data/results";
 import { PodiumCard } from "./podium-card";
 import { PodiumPhotoCard } from "./podium-photo-card";
 import { ResultsTable } from "./results-table";
-import { Trophy, Plus, Check, Filter, Loader2, Camera, Sparkles } from "lucide-react";
+import { Trophy, Plus, Check, Filter, Loader2, Camera, Sparkles, Upload, X } from "lucide-react";
 import { savePodiumPhotoForEvent } from "@/lib/data/photos";
 
 interface ResultsViewProps {
@@ -39,6 +39,19 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
 
   const [formPodiumPhotoUrl, setFormPodiumPhotoUrl] = useState("");
   const [isPublishing, setIsPublishing] = useState(false);
+  const formFileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFormFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (typeof reader.result === "string") {
+        setFormPodiumPhotoUrl(reader.result);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
 
   const targetEvent = events.find((e) => e.eventNo === formEventNo);
   const perfUnit = targetEvent?.unit || "sec";
@@ -378,22 +391,101 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
             </div>
           </div>
 
-          {/* Optional Podium Ceremony Photo */}
-          <div className="rounded-lg border border-border bg-muted/20 p-3 space-y-2">
-            <div className="flex items-center justify-between text-xs font-bold text-foreground">
-              <span className="flex items-center gap-1.5">
-                <Camera className="size-3.5 text-hp-navy dark:text-primary" />
-                Optional: Top 3 Victory Ceremony Photo
-              </span>
-              <span className="text-[10px] text-muted-foreground font-normal">URL or leave blank to upload later</span>
+          {/* Top 3 Victory Ceremony Photo Option */}
+          <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="p-1.5 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400">
+                  <Camera className="size-4" />
+                </span>
+                <div>
+                  <h4 className="text-xs font-bold text-foreground">
+                    Top 3 Victory Ceremony Photo
+                  </h4>
+                  <p className="text-[11px] text-muted-foreground">
+                    Upload or select a photo of the 1st, 2nd &amp; 3rd place winners on podium
+                  </p>
+                </div>
+              </div>
+
+              {formPodiumPhotoUrl && (
+                <button
+                  type="button"
+                  onClick={() => setFormPodiumPhotoUrl("")}
+                  className="text-[11px] text-red-600 hover:underline font-semibold"
+                >
+                  Clear Photo
+                </button>
+              )}
             </div>
-            <input
-              type="url"
-              placeholder="Paste photo URL (or leave blank to upload file after publishing)"
-              value={formPodiumPhotoUrl}
-              onChange={(e) => setFormPodiumPhotoUrl(e.target.value)}
-              className="w-full rounded border border-border bg-background p-2 text-xs focus:border-hp-navy focus:outline-none"
-            />
+
+            {/* Live Preview If Photo Selected */}
+            {formPodiumPhotoUrl ? (
+              <div className="relative aspect-[21/9] w-full rounded-lg overflow-hidden border border-border shadow-xs">
+                <img
+                  src={formPodiumPhotoUrl}
+                  alt="Podium Preview"
+                  className="size-full object-cover"
+                />
+                <span className="absolute bottom-2 left-2 rounded bg-black/75 px-2 py-0.5 text-[10px] font-bold text-amber-300 uppercase">
+                  Top 3 Ceremony Photo Selected
+                </span>
+              </div>
+            ) : null}
+
+            {/* Upload or Preset Buttons */}
+            <div className="flex flex-wrap items-center gap-2">
+              <input
+                ref={formFileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleFormFileUpload}
+                className="hidden"
+              />
+              <button
+                type="button"
+                onClick={() => formFileInputRef.current?.click()}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-card hover:bg-muted text-xs font-semibold text-foreground transition-colors shadow-xs"
+              >
+                <Upload className="size-3.5 text-hp-navy dark:text-primary" />
+                <span>Upload from Computer</span>
+              </button>
+
+              <span className="text-[11px] text-muted-foreground">or sample presets:</span>
+              <button
+                type="button"
+                onClick={() => setFormPodiumPhotoUrl("https://images.unsplash.com/photo-1569517282132-25d22f4573e6?auto=format&fit=crop&w=1200&q=80")}
+                className="px-2.5 py-1 rounded-md border border-border bg-card hover:border-amber-500 text-[11px] font-medium"
+              >
+                🥇 Victory Podium
+              </button>
+              <button
+                type="button"
+                onClick={() => setFormPodiumPhotoUrl("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80")}
+                className="px-2.5 py-1 rounded-md border border-border bg-card hover:border-amber-500 text-[11px] font-medium"
+              >
+                🏆 Medals Ceremony
+              </button>
+              <button
+                type="button"
+                onClick={() => setFormPodiumPhotoUrl("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80")}
+                className="px-2.5 py-1 rounded-md border border-border bg-card hover:border-amber-500 text-[11px] font-medium"
+              >
+                ⚡ Sprint Finish
+              </button>
+            </div>
+
+            {/* Direct URL input */}
+            <div className="pt-1">
+              <input
+                type="url"
+                placeholder="Or paste direct image URL (https://...)"
+                value={formPodiumPhotoUrl.startsWith("data:") ? "(Uploaded local file)" : formPodiumPhotoUrl}
+                disabled={formPodiumPhotoUrl.startsWith("data:")}
+                onChange={(e) => setFormPodiumPhotoUrl(e.target.value)}
+                className="w-full rounded-lg border border-border bg-background px-3 py-1.5 text-xs focus:border-hp-navy focus:outline-none"
+              />
+            </div>
           </div>
 
           <div className="flex justify-end gap-2">
