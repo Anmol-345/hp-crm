@@ -17,7 +17,6 @@ import {
   Award,
   User,
   ShieldAlert,
-  Zap,
 } from "lucide-react";
 
 const authSchema = z.object({
@@ -127,29 +126,6 @@ export default function LoginPage() {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const handleQuickLogin = async (role: "admin" | "official" | "viewer") => {
-    let email = "official@hpcl.in";
-    let name = "Track Marshal";
-    if (role === "admin") {
-      email = "admin@hpcl.in";
-      name = "Meet Administrator";
-    } else if (role === "viewer") {
-      email = "viewer@hpcl.in";
-      name = "Guest Viewer";
-    }
-
-    const password = "Password@123";
-    setValue("email", email);
-    setValue("password", password);
-    setValue("fullName", name);
-
-    await handleAuth({
-      email,
-      password,
-      fullName: name,
-    });
   };
 
   return (
@@ -349,43 +325,6 @@ export default function LoginPage() {
               )}
             </button>
           </form>
-
-          {/* Quick Demo Access Buttons */}
-          <div className="rounded-xl border border-border bg-muted/20 p-3.5 space-y-2">
-            <div className="flex items-center gap-1.5 text-xs font-bold text-hp-ink dark:text-white">
-              <Zap className="size-3.5 text-amber-500" />
-              <span>Instant Ground Access (Auto-Role):</span>
-            </div>
-            <div className="grid grid-cols-3 gap-2 pt-1">
-              <button
-                type="button"
-                onClick={() => handleQuickLogin("admin")}
-                disabled={isSubmitting}
-                className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-2 text-center hover:border-hp-navy hover:bg-muted/40 transition-all text-xs"
-              >
-                <span className="font-bold text-hp-navy dark:text-primary">Admin</span>
-                <span className="text-[10px] text-muted-foreground">Full Control</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickLogin("official")}
-                disabled={isSubmitting}
-                className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-2 text-center hover:border-hp-navy hover:bg-muted/40 transition-all text-xs"
-              >
-                <span className="font-bold text-emerald-600 dark:text-emerald-400">Official</span>
-                <span className="text-[10px] text-muted-foreground">Track Marshal</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickLogin("viewer")}
-                disabled={isSubmitting}
-                className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-2 text-center hover:border-hp-navy hover:bg-muted/40 transition-all text-xs"
-              >
-                <span className="font-bold text-slate-600 dark:text-slate-300">Viewer</span>
-                <span className="text-[10px] text-muted-foreground">Read-Only</span>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
