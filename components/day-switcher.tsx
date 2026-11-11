@@ -47,15 +47,15 @@ export function DaySwitcher({ className, size = "md" }: DaySwitcherProps) {
   return (
     <div
       className={cn(
-        "inline-flex items-center rounded-lg border border-border bg-muted/60 p-1 text-xs shadow-2xs",
+        "inline-flex items-center rounded-lg border border-border bg-muted/60 p-1 text-xs shadow-2xs whitespace-nowrap shrink-0",
         className
       )}
     >
-      <div className="hidden sm:flex items-center gap-1 px-2 text-muted-foreground font-medium mr-1">
-        <Calendar className="size-3.5 text-hp-navy dark:text-primary" />
+      <div className="hidden md:flex items-center gap-1 px-1.5 text-muted-foreground font-medium mr-0.5 whitespace-nowrap shrink-0">
+        <Calendar className="size-3.5 text-hp-navy dark:text-primary shrink-0" />
         <span>Meet Day:</span>
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 flex-nowrap shrink-0">
         {days.map((day) => {
           const isSelected = selectedDay === day.value;
           return (
@@ -64,8 +64,8 @@ export function DaySwitcher({ className, size = "md" }: DaySwitcherProps) {
               type="button"
               onClick={() => setSelectedDay(day.value)}
               className={cn(
-                "rounded-md px-2.5 py-1 font-semibold transition-all flex items-center gap-1",
-                size === "sm" ? "text-[11px] py-0.5 px-2" : "text-xs",
+                "rounded-md font-semibold transition-all flex items-center gap-1 whitespace-nowrap shrink-0",
+                size === "sm" ? "text-[11px] py-0.5 px-2" : "text-xs px-2.5 py-1",
                 isSelected
                   ? "bg-hp-navy text-white shadow-xs dark:bg-primary"
                   : "text-muted-foreground hover:text-foreground hover:bg-background/80"
@@ -75,7 +75,7 @@ export function DaySwitcher({ className, size = "md" }: DaySwitcherProps) {
               {day.value === "1 Mar 2025" && (
                 <span
                   className={cn(
-                    "text-[9px] rounded px-1 py-0.2 uppercase font-bold",
+                    "text-[9px] rounded px-1 py-0.2 uppercase font-bold whitespace-nowrap",
                     isSelected
                       ? "bg-hp-red text-white"
                       : "bg-hp-red/15 text-hp-red dark:bg-hp-red/25"

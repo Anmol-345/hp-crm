@@ -141,6 +141,7 @@ export function EventDetailTabs({
                       performance={results.find((r) => r.position === "I")!.performance}
                       performanceUnit={event.unit}
                       eventName={event.name}
+                      photoUrl={results.find((r) => r.position === "I")?.photoUrl}
                       className="md:order-2 border-2 border-hp-gold/60"
                     />
                   )}
@@ -153,6 +154,7 @@ export function EventDetailTabs({
                       performance={results.find((r) => r.position === "II")!.performance}
                       performanceUnit={event.unit}
                       eventName={event.name}
+                      photoUrl={results.find((r) => r.position === "II")?.photoUrl}
                       className="md:order-1"
                     />
                   )}
@@ -165,6 +167,7 @@ export function EventDetailTabs({
                       performance={results.find((r) => r.position === "III")!.performance}
                       performanceUnit={event.unit}
                       eventName={event.name}
+                      photoUrl={results.find((r) => r.position === "III")?.photoUrl}
                       className="md:order-3"
                     />
                   )}

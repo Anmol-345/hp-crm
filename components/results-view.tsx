@@ -37,9 +37,34 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
   const [pos3Unit, setPos3Unit] = useState("Visakh Refinery");
   const [pos3Perf, setPos3Perf] = useState("");
 
+  // Individual athlete photo states for Position I, II, III
+  const [pos1Photo, setPos1Photo] = useState("");
+  const [pos2Photo, setPos2Photo] = useState("");
+  const [pos3Photo, setPos3Photo] = useState("");
+
+  const pos1FileInputRef = useRef<HTMLInputElement>(null);
+  const pos2FileInputRef = useRef<HTMLInputElement>(null);
+  const pos3FileInputRef = useRef<HTMLInputElement>(null);
+
+  // Optional combined podium celebration photo
   const [formPodiumPhotoUrl, setFormPodiumPhotoUrl] = useState("");
   const [isPublishing, setIsPublishing] = useState(false);
   const formFileInputRef = useRef<HTMLInputElement>(null);
+
+  const handlePlayerPhotoUpload = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (url: string) => void
+  ) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (typeof reader.result === "string") {
+        setter(reader.result);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
 
   const handleFormFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -122,6 +147,7 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
         performance: parseFloat(pos1Perf) || 0,
         performanceDisplay: `${pos1Perf} ${perfUnit}`,
         points: 5,
+        photoUrl: pos1Photo || undefined,
       },
       ...(pos2Bib
         ? [
@@ -135,6 +161,7 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
               performance: parseFloat(pos2Perf) || 0,
               performanceDisplay: `${pos2Perf} ${perfUnit}`,
               points: 3,
+              photoUrl: pos2Photo || undefined,
             },
           ]
         : []),
@@ -150,12 +177,13 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
               performance: parseFloat(pos3Perf) || 0,
               performanceDisplay: `${pos3Perf} ${perfUnit}`,
               points: 1,
+              photoUrl: pos3Photo || undefined,
             },
           ]
         : []),
     ];
 
-    // If a podium photo was provided, save it
+    // If a combined podium photo was provided, save it
     if (formPodiumPhotoUrl) {
       await savePodiumPhotoForEvent(
         formEventNo,
@@ -173,6 +201,9 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
     ]);
 
     setIsPublishing(false);
+    setPos1Photo("");
+    setPos2Photo("");
+    setPos3Photo("");
     setFormPodiumPhotoUrl("");
     setShowAddForm(false);
     setSelectedEventNo(formEventNo);
@@ -260,7 +291,7 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
           </div>
 
           {/* Position I (Winner) */}
-          <div className="rounded-lg border border-hp-gold/40 bg-hp-gold/5 p-3 space-y-2">
+          <div className="rounded-lg border border-hp-gold/40 bg-hp-gold/5 p-3 space-y-3">
             <span className="font-bold text-xs text-amber-900 dark:text-amber-300 flex items-center gap-1">
               🥇 Position I · Winner (5 Points / ₹5,000)
             </span>
@@ -303,10 +334,93 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
                 required
               />
             </div>
+
+            {/* 1st Place Athlete Individual Photo */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2.5 mt-1 border-t border-hp-gold/30">
+              <div className="flex items-center gap-2.5">
+                {pos1Photo ? (
+                  <div className="relative size-10 rounded-full overflow-hidden border-2 border-amber-500 shadow-xs shrink-0">
+                    <img
+                      src={pos1Photo}
+                      alt="1st Place Player"
+                      className="size-full object-cover"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setPos1Photo("")}
+                      title="Remove 1st player photo"
+                      className="absolute inset-0 bg-black/60 text-white flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                    >
+                      <X className="size-3.5" />
+                    </button>
+                  </div>
+                ) : (
+                  <div className="size-10 rounded-full bg-amber-500/10 border-2 border-dashed border-amber-400 flex items-center justify-center text-amber-700 dark:text-amber-300 shrink-0">
+                    <Camera className="size-4" />
+                  </div>
+                )}
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-bold text-xs text-foreground">
+                      1st Player Photo
+                    </span>
+                    {pos1Photo ? (
+                      <span className="text-[10px] rounded bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 px-1.5 py-0.2 font-semibold">
+                        ✓ Photo Ready
+                      </span>
+                    ) : (
+                      <span className="text-[10px] text-muted-foreground">
+                        (Individual portrait)
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-muted-foreground">
+                    Upload winner image file or paste web URL
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={pos1FileInputRef}
+                  className="hidden"
+                  onChange={(e) => handlePlayerPhotoUpload(e, setPos1Photo)}
+                />
+                <button
+                  type="button"
+                  onClick={() => pos1FileInputRef.current?.click()}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs font-semibold hover:bg-muted transition-colors shadow-2xs whitespace-nowrap"
+                >
+                  <Upload className="size-3 text-muted-foreground" />
+                  <span>{pos1Photo ? "Change File" : "Upload File"}</span>
+                </button>
+
+                <input
+                  type="url"
+                  placeholder="Or paste photo URL (https://...)"
+                  value={pos1Photo.startsWith("data:") ? "(Uploaded local file)" : pos1Photo}
+                  disabled={pos1Photo.startsWith("data:")}
+                  onChange={(e) => setPos1Photo(e.target.value)}
+                  className="rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs w-48 sm:w-56 focus:border-hp-navy focus:outline-none"
+                />
+
+                {pos1Photo && (
+                  <button
+                    type="button"
+                    onClick={() => setPos1Photo("")}
+                    className="text-xs text-red-600 hover:underline px-1 font-semibold"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Position II (Runner-up) */}
-          <div className="rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/30 p-3 space-y-2">
+          <div className="rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/30 p-3 space-y-3">
             <span className="font-bold text-xs text-slate-700 dark:text-slate-300 flex items-center gap-1">
               🥈 Position II · Runner-up (3 Points / ₹4,000)
             </span>
@@ -346,10 +460,93 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
                 className="rounded border border-border bg-background p-2 font-mono tabular-nums"
               />
             </div>
+
+            {/* 2nd Place Athlete Individual Photo */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2.5 mt-1 border-t border-slate-300 dark:border-slate-700">
+              <div className="flex items-center gap-2.5">
+                {pos2Photo ? (
+                  <div className="relative size-10 rounded-full overflow-hidden border-2 border-slate-400 shadow-xs shrink-0">
+                    <img
+                      src={pos2Photo}
+                      alt="2nd Place Player"
+                      className="size-full object-cover"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setPos2Photo("")}
+                      title="Remove 2nd player photo"
+                      className="absolute inset-0 bg-black/60 text-white flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                    >
+                      <X className="size-3.5" />
+                    </button>
+                  </div>
+                ) : (
+                  <div className="size-10 rounded-full bg-slate-200/50 dark:bg-slate-800 border-2 border-dashed border-slate-400 flex items-center justify-center text-slate-600 dark:text-slate-300 shrink-0">
+                    <Camera className="size-4" />
+                  </div>
+                )}
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-bold text-xs text-foreground">
+                      2nd Player Photo
+                    </span>
+                    {pos2Photo ? (
+                      <span className="text-[10px] rounded bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 px-1.5 py-0.2 font-semibold">
+                        ✓ Photo Ready
+                      </span>
+                    ) : (
+                      <span className="text-[10px] text-muted-foreground">
+                        (Individual portrait)
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-muted-foreground">
+                    Upload runner-up image file or paste web URL
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={pos2FileInputRef}
+                  className="hidden"
+                  onChange={(e) => handlePlayerPhotoUpload(e, setPos2Photo)}
+                />
+                <button
+                  type="button"
+                  onClick={() => pos2FileInputRef.current?.click()}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs font-semibold hover:bg-muted transition-colors shadow-2xs whitespace-nowrap"
+                >
+                  <Upload className="size-3 text-muted-foreground" />
+                  <span>{pos2Photo ? "Change File" : "Upload File"}</span>
+                </button>
+
+                <input
+                  type="url"
+                  placeholder="Or paste photo URL (https://...)"
+                  value={pos2Photo.startsWith("data:") ? "(Uploaded local file)" : pos2Photo}
+                  disabled={pos2Photo.startsWith("data:")}
+                  onChange={(e) => setPos2Photo(e.target.value)}
+                  className="rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs w-48 sm:w-56 focus:border-hp-navy focus:outline-none"
+                />
+
+                {pos2Photo && (
+                  <button
+                    type="button"
+                    onClick={() => setPos2Photo("")}
+                    className="text-xs text-red-600 hover:underline px-1 font-semibold"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Position III (1st Runner-up) */}
-          <div className="rounded-lg border border-amber-800/30 bg-amber-900/5 p-3 space-y-2">
+          <div className="rounded-lg border border-amber-800/30 bg-amber-900/5 p-3 space-y-3">
             <span className="font-bold text-xs text-amber-900 dark:text-amber-400 flex items-center gap-1">
               🥉 Position III · 1st Runner-up (1 Point / ₹3,000)
             </span>
@@ -389,6 +586,89 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
                 className="rounded border border-border bg-background p-2 font-mono tabular-nums"
               />
             </div>
+
+            {/* 3rd Place Athlete Individual Photo */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2.5 mt-1 border-t border-amber-800/20">
+              <div className="flex items-center gap-2.5">
+                {pos3Photo ? (
+                  <div className="relative size-10 rounded-full overflow-hidden border-2 border-amber-700 shadow-xs shrink-0">
+                    <img
+                      src={pos3Photo}
+                      alt="3rd Place Player"
+                      className="size-full object-cover"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setPos3Photo("")}
+                      title="Remove 3rd player photo"
+                      className="absolute inset-0 bg-black/60 text-white flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                    >
+                      <X className="size-3.5" />
+                    </button>
+                  </div>
+                ) : (
+                  <div className="size-10 rounded-full bg-amber-900/10 border-2 border-dashed border-amber-700/40 flex items-center justify-center text-amber-800 dark:text-amber-400 shrink-0">
+                    <Camera className="size-4" />
+                  </div>
+                )}
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-bold text-xs text-foreground">
+                      3rd Player Photo
+                    </span>
+                    {pos3Photo ? (
+                      <span className="text-[10px] rounded bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 px-1.5 py-0.2 font-semibold">
+                        ✓ Photo Ready
+                      </span>
+                    ) : (
+                      <span className="text-[10px] text-muted-foreground">
+                        (Individual portrait)
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-muted-foreground">
+                    Upload 1st runner-up image file or paste web URL
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={pos3FileInputRef}
+                  className="hidden"
+                  onChange={(e) => handlePlayerPhotoUpload(e, setPos3Photo)}
+                />
+                <button
+                  type="button"
+                  onClick={() => pos3FileInputRef.current?.click()}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs font-semibold hover:bg-muted transition-colors shadow-2xs whitespace-nowrap"
+                >
+                  <Upload className="size-3 text-muted-foreground" />
+                  <span>{pos3Photo ? "Change File" : "Upload File"}</span>
+                </button>
+
+                <input
+                  type="url"
+                  placeholder="Or paste photo URL (https://...)"
+                  value={pos3Photo.startsWith("data:") ? "(Uploaded local file)" : pos3Photo}
+                  disabled={pos3Photo.startsWith("data:")}
+                  onChange={(e) => setPos3Photo(e.target.value)}
+                  className="rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs w-48 sm:w-56 focus:border-hp-navy focus:outline-none"
+                />
+
+                {pos3Photo && (
+                  <button
+                    type="button"
+                    onClick={() => setPos3Photo("")}
+                    className="text-xs text-red-600 hover:underline px-1 font-semibold"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Top 3 Victory Ceremony Photo Option */}
@@ -400,10 +680,10 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
                 </span>
                 <div>
                   <h4 className="text-xs font-bold text-foreground">
-                    Top 3 Victory Ceremony Photo
+                    Top 3 Combined Victory Ceremony Photo (Optional)
                   </h4>
                   <p className="text-[11px] text-muted-foreground">
-                    Upload or select a photo of the 1st, 2nd &amp; 3rd place winners on podium
+                    Upload or select an optional group photo of all top 3 winners together on the podium for the event gallery
                   </p>
                 </div>
               </div>
@@ -571,6 +851,7 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
                     performance={pos2.performance}
                     performanceUnit={event?.unit || "sec"}
                     eventName={event?.name}
+                    photoUrl={pos2.photoUrl}
                     className="md:order-1"
                   />
                 )}
@@ -585,6 +866,7 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
                     performance={pos1.performance}
                     performanceUnit={event?.unit || "sec"}
                     eventName={event?.name}
+                    photoUrl={pos1.photoUrl}
                     className="md:order-2 border-2 border-hp-gold shadow-md md:-translate-y-2"
                   />
                 )}
@@ -599,6 +881,7 @@ export function ResultsView({ initialResults, events }: ResultsViewProps) {
                     performance={pos3.performance}
                     performanceUnit={event?.unit || "sec"}
                     eventName={event?.name}
+                    photoUrl={pos3.photoUrl}
                     className="md:order-3"
                   />
                 )}

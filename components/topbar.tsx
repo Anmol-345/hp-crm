@@ -67,15 +67,15 @@ export function Topbar({ onMobileMenuClick, isCollapsed }: TopbarProps) {
     <>
       <header
         className={cn(
-          "sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-card/95 px-4 backdrop-blur-xs transition-all duration-200",
+          "sticky top-0 z-30 flex h-16 items-center justify-between gap-2 sm:gap-3 border-b border-border bg-card/95 px-3 sm:px-4 backdrop-blur-xs transition-all duration-200 whitespace-nowrap overflow-x-hidden",
           isCollapsed ? "lg:pl-24" : "lg:pl-76"
         )}
       >
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-2 sm:gap-3 flex-nowrap shrink-0 min-w-0">
           {/* Mobile hamburger */}
           <button
             onClick={onMobileMenuClick}
-            className="rounded-lg p-2 text-muted-foreground hover:bg-muted lg:hidden"
+            className="rounded-lg p-2 text-muted-foreground hover:bg-muted lg:hidden shrink-0"
             aria-label="Open navigation menu"
           >
             <Menu className="size-5" />
@@ -85,31 +85,34 @@ export function Topbar({ onMobileMenuClick, isCollapsed }: TopbarProps) {
           <button
             type="button"
             onClick={() => setIsCommandOpen(true)}
-            className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-hp-navy/60 hover:text-foreground transition-all shadow-2xs"
+            className="flex items-center gap-2 rounded-lg border border-border bg-background px-2.5 sm:px-3 py-1.5 text-xs text-muted-foreground hover:border-hp-navy/60 hover:text-foreground transition-all shadow-2xs whitespace-nowrap shrink-0"
           >
-            <Search className="size-3.5" />
+            <Search className="size-3.5 shrink-0" />
             <span className="hidden sm:inline">Search meet records...</span>
             <span className="sm:hidden">Search...</span>
-            <kbd className="hidden sm:inline-flex items-center gap-0.5 rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
+            <kbd className="hidden sm:inline-flex items-center gap-0.5 rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground shrink-0">
               ⌘K
             </kbd>
           </button>
 
-          {/* Location / Session Tag */}
-          <div className="hidden xl:flex items-center gap-2 text-xs text-muted-foreground border-l border-border pl-4">
-            <span className="size-2 rounded-full bg-[#E4202B] animate-ping" />
-            <span className="font-semibold text-foreground">Chembur Sports Complex</span>
-            <span>·</span>
-            <span>Day 1 Session 2 Live</span>
+          {/* Location / Session Tag - strictly single line on large screens */}
+          <div className="hidden 2xl:flex items-center gap-2 text-xs text-muted-foreground border-l border-border pl-3 whitespace-nowrap shrink-0">
+            <span className="relative flex size-2 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E4202B] opacity-75" />
+              <span className="relative inline-flex size-2 rounded-full bg-[#E4202B]" />
+            </span>
+            <span className="font-semibold text-foreground whitespace-nowrap">Chembur Sports Complex</span>
+            <span className="text-muted-foreground/40">·</span>
+            <span className="whitespace-nowrap">Day 1 Session 2 Live</span>
           </div>
         </div>
 
-        {/* Center / Right controls */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        {/* Center / Right controls - single line flex-nowrap */}
+        <div className="flex items-center gap-2 sm:gap-2.5 flex-nowrap shrink-0">
           {/* Live Sync Pill */}
           <div
             className={cn(
-              "hidden sm:flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold border transition-all",
+              "hidden sm:flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold border transition-all whitespace-nowrap shrink-0",
               isConnected
                 ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:border-emerald-800/60 dark:text-emerald-300"
                 : "bg-slate-100 text-slate-600 border-slate-200 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400"
@@ -118,12 +121,12 @@ export function Topbar({ onMobileMenuClick, isCollapsed }: TopbarProps) {
           >
             <span
               className={cn(
-                "size-2 rounded-full",
+                "size-2 rounded-full shrink-0",
                 isConnected ? "bg-emerald-500 animate-pulse" : "bg-slate-400"
               )}
             />
-            <span className="flex items-center gap-1">
-              <Radio className="size-3" />
+            <span className="flex items-center gap-1 whitespace-nowrap">
+              <Radio className="size-3 shrink-0" />
               <span>{isConnected ? "Live Sync Active" : "Sync Standby"}</span>
             </span>
           </div>
@@ -134,19 +137,19 @@ export function Topbar({ onMobileMenuClick, isCollapsed }: TopbarProps) {
           {/* Format 3 Quick Button */}
           <Link
             href="/cash-cards"
-            className="hidden md:inline-flex items-center gap-1.5 rounded-lg border border-hp-red/30 bg-hp-red/10 px-3 py-1.5 text-xs font-semibold text-hp-red hover:bg-hp-red hover:text-white transition-colors"
+            className="hidden lg:inline-flex items-center gap-1.5 rounded-lg border border-hp-red/30 bg-hp-red/10 px-2.5 py-1.5 text-xs font-semibold text-hp-red hover:bg-hp-red hover:text-white transition-colors whitespace-nowrap shrink-0"
           >
-            <CreditCard className="size-3.5" />
+            <CreditCard className="size-3.5 shrink-0" />
             <span>Format 3 Sheet</span>
           </Link>
 
           {/* User Profile dropdown */}
-          <div className="relative">
+          <div className="relative shrink-0">
             <button
               onClick={() => setShowUserMenu(!showUserMenu)}
-              className="flex items-center gap-2 rounded-full border border-border p-1 hover:ring-2 hover:ring-hp-navy/20 transition-all"
+              className="flex items-center gap-2 rounded-full border border-border p-1 hover:ring-2 hover:ring-hp-navy/20 transition-all shrink-0"
             >
-              <div className="flex size-7 items-center justify-center rounded-full bg-[#1F2E8C] text-xs font-bold text-white uppercase">
+              <div className="flex size-7 items-center justify-center rounded-full bg-[#1F2E8C] text-xs font-bold text-white uppercase shrink-0">
                 {currentUser.role === "admin" ? "AD" : currentUser.role === "official" ? "OF" : "HP"}
               </div>
             </button>

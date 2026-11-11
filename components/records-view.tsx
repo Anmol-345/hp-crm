@@ -986,3 +986,4 @@ export function RecordsView({ initialRecords, events, results = [] }: RecordsVie
 }
 
 export default RecordsView;
+

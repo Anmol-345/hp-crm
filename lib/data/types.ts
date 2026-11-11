@@ -77,6 +77,7 @@ export interface Result {
   performanceDisplay: string;
   points?: number;
   notes?: string;
+  photoUrl?: string;
 }
 
 export interface CashCard {
