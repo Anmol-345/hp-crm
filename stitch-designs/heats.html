@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-highest": "#dee0ff",
+          "inverse-on-surface": "#f0efff",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-background": "#131939",
+          "on-secondary": "#ffffff",
+          "on-primary-container": "#8e9cfe",
+          "tertiary-fixed-dim": "#bbc3ff",
+          "on-tertiary-fixed-variant": "#374184",
+          "surface-variant": "#dee0ff",
+          "on-secondary-container": "#fffbff",
+          "on-error": "#ffffff",
+          "outline": "#767683",
+          "on-surface": "#131939",
+          "surface-dim": "#d3d8ff",
+          "on-primary-fixed": "#000d5f",
+          "surface-bright": "#fbf8ff",
+          "secondary-fixed-dim": "#ffb3ad",
+          "on-tertiary-container": "#949ee9",
+          "secondary": "#bb001a",
+          "secondary-fixed": "#ffdad6",
+          "tertiary-container": "#293376",
+          "on-error-container": "#93000a",
+          "surface-container-high": "#e5e6ff",
+          "primary-fixed-dim": "#bbc3ff",
+          "inverse-primary": "#bbc3ff",
+          "on-primary-fixed-variant": "#2e3d9a",
+          "primary-container": "#1f2e8c",
+          "surface-container": "#ececff",
+          "on-tertiary-fixed": "#051158",
+          "surface": "#fbf8ff",
+          "error": "#ba1a1a",
+          "outline-variant": "#c6c5d4",
+          "inverse-surface": "#282e4f",
+          "primary-fixed": "#dfe0ff",
+          "on-secondary-fixed": "#410003",
+          "error-container": "#ffdad6",
+          "on-secondary-fixed-variant": "#930012",
+          "secondary-container": "#e4202b",
+          "primary": "#001375",
+          "tertiary-fixed": "#dfe0ff",
+          "on-surface-variant": "#454652",
+          "surface-container-low": "#f4f2ff",
+          "tertiary": "#101b60",
+          "surface-tint": "#4856b3"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "gutter-desktop": "1.5rem",
+          "space-xl": "2rem",
+          "space-md": "1rem",
+          "margin-desktop": "2rem",
+          "gutter": "1rem",
+          "margin": "1rem"
+        },
+        "fontFamily": {
+          "label-caps": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "data-metric": [
+            "Space Grotesk"
+          ],
+          "headline-md": [
+            "Space Grotesk"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "display-hero-mobile": [
+            "Space Grotesk"
+          ],
+          "headline-lg-mobile": [
+            "Space Grotesk"
+          ],
+          "table-data": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Space Grotesk"
+          ],
+          "headline-lg": [
+            "Space Grotesk"
+          ],
+          "display-hero": [
+            "Space Grotesk"
+          ]
+        },
+        "fontSize": {
+          "label-caps": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "data-metric": [
+            "28px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "26px",
+            {
+              "lineHeight": "34px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "table-data": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-hero": [
+            "44px",
+            {
+              "lineHeight": "52px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-tertiary text-on-tertiary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="flex flex-col"><div class="p-space-lg flex items-center gap-3 bg-tertiary-container/30"><img alt="HP Sports Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAVnRS3BIhdfgkddIBLtzBypoTkq8zIFYyyFpO7QUmJG06SQA7nwC6PzHqIBZJltIw2eoyOE5pkd4M0QTmfY2jOBtvHI94TYxzZpgNa8ku1VUQ7flU9lQhSfr3vYeVDDASy5EbtWg97C7N0uKSnDG2Y7FAdBKLicdcUdhRR7gis4KcjA93LOBzpUNdLpZszbKsvmc2Uqhqg5_r09blNLxd7-HFSMRzelACDGBCu7A"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-tertiary tracking-tight leading-tight">HP Sports Meet CRM</span><span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-wider mt-0.5">19th All India Annual Meet 2024-25</span></div></div><div class="px-space-md py-space-sm"><span class="font-label-caps text-label-caps text-tertiary-fixed-dim/80 px-space-sm uppercase tracking-wider">Championship Management</span></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="events" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-md text-body-md">Events</span></a><a aria-current="page" class="flex items-center gap-3 px-space-md py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="heats" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span class="font-body-md text-body-md">Heats (Official Record)</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="results-entry" href="#"><span class="material-symbols-outlined text-[20px]">edit_note</span><span class="font-body-md text-body-md">Results Entry</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="cash-cards" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-md text-body-md">Cash Cards (Format 3)</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="athletes-profiles" href="#"><span class="material-symbols-outlined text-[20px]">directions_run</span><span class="font-body-md text-body-md">Athletes &amp; Profiles</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="units-zones" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-md text-body-md">Units / Zones</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="reports-medals" href="#"><span class="material-symbols-outlined text-[20px]">military_tech</span><span class="font-body-md text-body-md">Reports &amp; Medals</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="data-quality" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-md text-body-md">Data Quality</span></div><span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary px-2 py-0.5 rounded-full">Audit</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="settings-scales" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Settings &amp; Scales</span></a></nav></div><div class="p-space-md bg-tertiary-container/20 m-space-md rounded-xl"><div class="flex items-center gap-2 mb-1"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-tertiary-fixed-dim">Live Meet Status</span></div><p class="font-body-sm text-body-sm text-on-tertiary font-medium">Track Active · Lane Cameras Synced</p><p class="font-body-sm text-body-sm text-tertiary-fixed-dim/70 text-[11px] mt-0.5">Field Operations Gate 3</p></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search athletes, BIBs &amp; events (e.g. 100m, BIB-402)..." type="text"/></div><div class="hidden xl:flex items-center gap-1.5 text-on-surface-variant whitespace-nowrap"><span class="material-symbols-outlined text-[18px] text-secondary">location_on</span><span class="font-body-sm text-body-sm font-medium">HPCL Sports Complex, Chembur, Mumbai</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-high p-1 rounded-lg"><button class="px-space-md py-1 rounded-md font-label-caps text-label-caps bg-primary text-on-primary shadow-sm">Day 1 · 28 Feb 2025</button><button class="px-space-md py-1 rounded-md font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors">Day 2 · 01 Mar 2025</button></div><button class="flex items-center gap-1.5 px-space-md py-2 bg-secondary-container hover:bg-secondary text-on-secondary rounded-lg font-body-md text-body-md font-semibold shadow-sm transition-colors whitespace-nowrap"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>Record Result</span></button><div class="h-8 w-px bg-outline-variant/60 hidden sm:block"></div><div class="flex items-center gap-2.5 pl-1"><div class="text-right hidden md:block"><div class="font-body-md text-body-md font-semibold text-on-surface leading-tight">R. Sharma</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Track Official</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg max-w-[1720px] mx-auto w-full space-y-space-md">
+<!-- METRIC / COMPLIANCE BANNER & QUICK CONTEXT -->
+<div class="relative overflow-hidden rounded-xl bg-tertiary text-on-tertiary shadow-sm p-space-md flex flex-wrap items-center justify-between gap-4">
+<div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-secondary-container/10 pointer-events-none blur-2xl"></div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center p-2 rounded-lg bg-surface-container-highest/10 text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-tertiary-fixed-dim">AFI Standard Track Protocol · Form-3 Officiating</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-caps text-label-caps">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> Live Scrutiny Active
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-highest/80">Electronic Timing Synchronized (Omega Photo-Finish Gate 1) · Wind Gauge: +0.8 m/s Legal</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-right">
+<div>
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase">Official Meet Record</div>
+<div class="font-data-metric text-headline-sm text-on-tertiary">11.20s <span class="font-body-sm text-body-sm text-tertiary-fixed-dim">(2018 · Suresh P.)</span></div>
+</div>
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]">trophy</span>
+</div>
+<div class="h-8 w-px bg-tertiary-container"></div>
+<div class="text-right">
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase">Progression Rule</div>
+<div class="font-body-md text-body-md font-semibold text-on-tertiary">Top 2 per Heat (Q) + 2 Fastest (q)</div>
+</div>
+</div>
+</div>
+<!-- MAIN EVENT TITLE & ACTIONS STRIP -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps">EVENT #01</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps">TRACK · 100M</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-caps text-label-caps font-semibold">MEN (BELOW 45 YRS)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">· Round 1 of 2</span>
+</div>
+<div class="flex items-baseline gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Official Record Sheet (Heats)</h1>
+<span class="font-body-sm text-body-sm text-on-surface-variant">24 Competitors across 3 Heats · 8 Advance to Final</span>
+</div>
+</div>
+<!-- Action Button Group -->
+<div class="flex flex-wrap items-center gap-2.5">
+<button class="flex items-center gap-2 px-space-md py-2.5 bg-secondary-container hover:bg-secondary text-on-secondary rounded-lg font-body-md text-body-md font-semibold shadow-sm transition-all active:scale-[0.98]" id="promoteModalBtn">
+<span class="material-symbols-outlined text-[20px]">military_tech</span>
+<span>Promote Top 8 to Final</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 bg-primary-container hover:bg-primary text-on-primary rounded-lg font-body-md text-body-md font-medium shadow-sm transition-all active:scale-[0.98]" onclick="sortGridByPerformance()">
+<span class="material-symbols-outlined text-[18px]">swap_vert</span>
+<span>Re-sort by Time</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-body-md text-body-md font-medium transition-colors" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Format 3</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2.5 bg-surface-container text-secondary hover:bg-error-container hover:text-on-error-container rounded-lg font-body-md text-body-md font-medium transition-colors" onclick="alert('Notification dispatched to Chief Track Referee &amp; Technical Delegate.')" title="Flag issue for referee audit">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+<span class="hidden sm:inline">Audit Flag</span>
+</button>
+</div>
+</div>
+<!-- HEAT TABS & WORKSPACE GRID -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT: ACTIVE HEAT DATA GRID & FAST KEYPAD (8 COLS DESKTOP) -->
+<div class="xl:col-span-9 space-y-space-md">
+<!-- HEAT SELECTOR NAVIGATION -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-2 rounded-xl shadow-sm">
+<div class="flex items-center gap-1 overflow-x-auto">
+<button class="flex items-center gap-2 px-space-md py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container transition-colors" id="tabHeat1" onclick="switchHeat(1)">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant text-[18px]">check_circle</span>
+<span class="font-semibold">Heat 1</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-[10px]">CONCLUDED</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container transition-colors" id="tabHeat2" onclick="switchHeat(2)">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant text-[18px]">check_circle</span>
+<span class="font-semibold">Heat 2</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-[10px]">CONCLUDED</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2 rounded-lg font-body-md text-body-md bg-primary text-on-primary shadow-sm font-semibold" id="tabHeat3" onclick="switchHeat(3)">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span>Heat 3</span>
+<span class="px-1.5 py-0.5 rounded bg-white/20 text-on-primary font-label-caps text-[10px]">IN PROGRESS</span>
+</button>
+</div>
+<div class="flex items-center gap-2 pr-2">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container text-body-sm font-medium transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Heat</span>
+</button>
+<span class="text-outline-variant">|</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Lane Setup: 8/8 Seated</span>
+</div>
+</div>
+<!-- HEAT 3 ACTIVE DATA TABLE -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Grid Header Bar -->
+<div class="px-space-lg py-3 bg-surface-container-low flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Heat 3 Official Lane Roster</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">(Direct Finish Cam Feed)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Legend:</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-caps text-[10px] font-bold">Q = Auto Qualify (Rank 1-2)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-label-caps text-[10px] font-bold">q = Fastest Time Next</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-caps text-[10px] font-bold">DNQ = Out</span>
+</div>
+</div>
+<!-- The Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="heatsTable">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-3 px-4 w-16 text-center">Lane</th>
+<th class="py-3 px-4 w-24">BIB</th>
+<th class="py-3 px-4 min-w-[200px]">Competitor Athlete</th>
+<th class="py-3 px-4 min-w-[170px]">Unit / Zone</th>
+<th class="py-3 px-4 w-36 text-right">Time (sec)</th>
+<th class="py-3 px-4 w-20 text-center">Rank</th>
+<th class="py-3 px-4 w-24 text-center">Status</th>
+<th class="py-3 px-4 w-32 text-center">Scrutiny</th>
+<th class="py-3 px-4 w-20 text-center">Touch</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="heatTableBody">
+<!-- ROW 1 (Lane 4 Abhinav Singh) -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-bib="330" data-lane="4">
+<td class="py-2.5 px-4 text-center">
+<span class="w-8 h-8 inline-flex items-center justify-center rounded-lg bg-surface-container font-headline-sm text-headline-sm text-primary font-bold">4</span>
+</td>
+<td class="py-2.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high font-data-metric text-body-md font-bold text-on-surface">#330</span>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-2">
+<div class="font-body-md text-body-md font-semibold text-on-surface">Abhinav Singh</div>
+<span class="text-xs px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">M42</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">DOB: 14-Aug-1982 · Emp# 78102</div>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+<span class="font-body-md text-body-md">Mumbai Refinery</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container rounded-lg p-1 pr-2">
+<input class="lane-time-input w-20 bg-surface-container-lowest text-right font-data-metric text-body-lg font-bold text-on-surface px-2 py-1 rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-primary" onfocus="setActiveInput(this, '4', 'Abhinav Singh', '#330')" type="text" value="12.48"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">s</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="w-7 h-7 inline-flex items-center justify-center rounded-full bg-secondary-fixed text-secondary font-headline-sm text-body-md font-bold">I</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps font-bold">Q (AUTO)</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="focusLaneInput('4')">
+<span class="material-symbols-outlined text-[20px]">dialpad</span>
+</button>
+</td>
+</tr>
+<!-- ROW 2 (Lane 5 G. Ramanjaneyulu) -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest" data-bib="853" data-lane="5">
+<td class="py-2.5 px-4 text-center">
+<span class="w-8 h-8 inline-flex items-center justify-center rounded-lg bg-surface-container font-headline-sm text-headline-sm text-primary font-bold">5</span>
+</td>
+<td class="py-2.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high font-data-metric text-body-md font-bold text-on-surface">#853</span>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-2">
+<div class="font-body-md text-body-md font-semibold text-on-surface">G. Ramanjaneyulu</div>
+<span class="text-xs px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">M39</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">DOB: 02-Nov-1985 · Emp# 94221</div>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+<span class="font-body-md text-body-md">Visakh Refinery</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container rounded-lg p-1 pr-2">
+<input class="lane-time-input w-20 bg-surface-container-lowest text-right font-data-metric text-body-lg font-bold text-on-surface px-2 py-1 rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-primary" onfocus="setActiveInput(this, '5', 'G. Ramanjaneyulu', '#853')" type="text" value="12.67"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">s</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="w-7 h-7 inline-flex items-center justify-center rounded-full bg-surface-container-high text-on-surface font-headline-sm text-body-md font-bold">III</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-tertiary font-label-caps text-label-caps font-bold">q (NEXT FAST)</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="focusLaneInput('5')">
+<span class="material-symbols-outlined text-[20px]">dialpad</span>
+</button>
+</td>
+</tr>
+<!-- ROW 3 (Lane 3 K. Satish Kumar) -->
+<tr class="hover:bg-surface-container-low transition-colors" data-bib="852" data-lane="3">
+<td class="py-2.5 px-4 text-center">
+<span class="w-8 h-8 inline-flex items-center justify-center rounded-lg bg-surface-container font-headline-sm text-headline-sm text-primary font-bold">3</span>
+</td>
+<td class="py-2.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high font-data-metric text-body-md font-bold text-on-surface">#852</span>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-2">
+<div class="font-body-md text-body-md font-semibold text-on-surface">K. Satish Kumar</div>
+<span class="text-xs px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">M44</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">DOB: 19-Jun-1980 · Emp# 51104</div>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+<span class="font-body-md text-body-md">Visakh Refinery</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container rounded-lg p-1 pr-2">
+<input class="lane-time-input w-20 bg-surface-container-lowest text-right font-data-metric text-body-lg font-bold text-on-surface px-2 py-1 rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-primary" onfocus="setActiveInput(this, '3', 'K. Satish Kumar', '#852')" type="text" value="13.02"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">s</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="w-7 h-7 inline-flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant font-headline-sm text-body-md font-semibold">VII</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-1 rounded-full bg-error-container/60 text-on-error-container font-label-caps text-label-caps font-semibold">DNQ</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="focusLaneInput('3')">
+<span class="material-symbols-outlined text-[20px]">dialpad</span>
+</button>
+</td>
+</tr>
+<!-- ROW 4 (Lane 6 S. Kulkarni) -->
+<tr class="hover:bg-surface-container-low transition-colors" data-bib="365" data-lane="6">
+<td class="py-2.5 px-4 text-center">
+<span class="w-8 h-8 inline-flex items-center justify-center rounded-lg bg-surface-container font-headline-sm text-headline-sm text-primary font-bold">6</span>
+</td>
+<td class="py-2.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high font-data-metric text-body-md font-bold text-on-surface">#365</span>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-2">
+<div class="font-body-md text-body-md font-semibold text-on-surface">S. Kulkarni</div>
+<span class="text-xs px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">M41</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">DOB: 23-Jan-1983 · Emp# 83991</div>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+<span class="font-body-md text-body-md">Mumbai Refinery</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container rounded-lg p-1 pr-2">
+<input class="lane-time-input w-20 bg-surface-container-lowest text-right font-data-metric text-body-lg font-bold text-on-surface px-2 py-1 rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-primary" onfocus="setActiveInput(this, '6', 'S. Kulkarni', '#365')" type="text" value="13.16"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">s</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="w-7 h-7 inline-flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant font-headline-sm text-body-md font-semibold">VIII</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-1 rounded-full bg-error-container/60 text-on-error-container font-label-caps text-label-caps font-semibold">DNQ</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="focusLaneInput('6')">
+<span class="material-symbols-outlined text-[20px]">dialpad</span>
+</button>
+</td>
+</tr>
+<!-- ROW 5 (Lane 2 Rajeshwar Rao - Heat 3 addition) -->
+<tr class="hover:bg-surface-container-low transition-colors" data-bib="612" data-lane="2">
+<td class="py-2.5 px-4 text-center">
+<span class="w-8 h-8 inline-flex items-center justify-center rounded-lg bg-surface-container font-headline-sm text-headline-sm text-primary font-bold">2</span>
+</td>
+<td class="py-2.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high font-data-metric text-body-md font-bold text-on-surface">#612</span>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-2">
+<div class="font-body-md text-body-md font-semibold text-on-surface">Rajeshwar Rao</div>
+<span class="text-xs px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">M37</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">DOB: 11-Dec-1987 · Emp# 99402</div>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+<span class="font-body-md text-body-md">South Central Zone</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container rounded-lg p-1 pr-2">
+<input class="lane-time-input w-20 bg-surface-container-lowest text-right font-data-metric text-body-lg font-bold text-on-surface px-2 py-1 rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-primary" onfocus="setActiveInput(this, '2', 'Rajeshwar Rao', '#612')" type="text" value="12.59"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">s</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="w-7 h-7 inline-flex items-center justify-center rounded-full bg-secondary-fixed text-secondary font-headline-sm text-body-md font-bold">II</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps font-bold">Q (AUTO)</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="focusLaneInput('2')">
+<span class="material-symbols-outlined text-[20px]">dialpad</span>
+</button>
+</td>
+</tr>
+<!-- ROW 6 (Lane 7 T. Deepan) -->
+<tr class="hover:bg-surface-container-low transition-colors" data-bib="199" data-lane="7">
+<td class="py-2.5 px-4 text-center">
+<span class="w-8 h-8 inline-flex items-center justify-center rounded-lg bg-surface-container font-headline-sm text-headline-sm text-primary font-bold">7</span>
+</td>
+<td class="py-2.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high font-data-metric text-body-md font-bold text-on-surface">#199</span>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-2">
+<div class="font-body-md text-body-md font-semibold text-on-surface">T. Deepan Kumar</div>
+<span class="text-xs px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">M34</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">DOB: 05-Mar-1990 · Emp# 10243</div>
+</td>
+<td class="py-2.5 px-4">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+<span class="font-body-md text-body-md">North West Zone</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container rounded-lg p-1 pr-2">
+<input class="lane-time-input w-20 bg-surface-container-lowest text-right font-data-metric text-body-lg font-bold text-on-surface px-2 py-1 rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-primary" onfocus="setActiveInput(this, '7', 'T. Deepan Kumar', '#199')" type="text" value="12.74"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">s</span>
+</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="w-7 h-7 inline-flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant font-headline-sm text-body-md font-semibold">IV</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-1 rounded-full bg-error-container/60 text-on-error-container font-label-caps text-label-caps font-semibold">DNQ</span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-primary-fixed-variant font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">hourglass_empty</span> Review
+                    </span>
+</td>
+<td class="py-2.5 px-4 text-center">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="focusLaneInput('7')">
+<span class="material-symbols-outlined text-[20px]">dialpad</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bottom Summary Strip within Heat Grid -->
+<div class="p-space-md bg-surface-container-low flex flex-wrap items-center justify-between gap-3 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">info</span>
+<span class="font-body-sm text-body-sm">Chief Track Judge: <strong>K. Venkataraman (IOA Certified)</strong> · Recorder: <strong>R. Sharma</strong></span>
+</div>
+<div class="flex items-center gap-4 font-body-sm text-body-sm">
+<span>Heat Status: <strong class="text-secondary">Scored &amp; Awaiting Promotion Lock</strong></span>
+<button class="px-3 py-1 bg-surface-container text-primary rounded font-label-caps text-label-caps font-semibold hover:bg-surface-container-high transition-colors">Sign &amp; Lock Heat 3</button>
+</div>
+</div>
+</div>
+<!-- RECENT PHOTO FINISH STRIP MINI-PREVIEW -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-20 h-14 rounded-lg bg-surface-container overflow-hidden flex items-center justify-center relative">
+<span class="material-symbols-outlined text-outline text-[32px]">photo_camera</span>
+<span class="absolute bottom-1 right-1 font-label-caps text-[9px] bg-tertiary text-on-tertiary px-1 rounded">CAM 1</span>
+</div>
+<div>
+<div class="font-headline-sm text-body-md font-bold text-on-surface">Finish Line Slit-Scan Frame #330-4</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Torso cross detected at 12.482s · Delta to Lane 2: +0.108s</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+<span>Inspect Gate Sensor</span>
+</button>
+<span class="text-body-sm text-on-surface-variant font-medium">Timer FPS: 2,000 Hz</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: RAPID KEYPAD ENTRY & PREVIOUS HEAT SUMMARIES (3 COLS DESKTOP) -->
+<div class="xl:col-span-3 space-y-space-md">
+<!-- TRACK JUDGE QUICK TOUCH KEYPAD (Docked for tablet/laptop entry) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">touch_app</span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface">Rapid Lane Keypad</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps font-bold" id="activeLaneBadge">LANE 4</span>
+</div>
+<div class="mb-3">
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate" id="activeAthleteLabel">Abhinav Singh (#330)</div>
+<div class="text-headline-lg font-data-metric text-primary tracking-tight font-bold py-1 px-3 bg-surface-container-low rounded-lg mt-1 flex items-center justify-between">
+<span id="keypadDisplay">12.48</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SEC</span>
+</div>
+</div>
+<!-- KEYPAD BUTTONS -->
+<div class="grid grid-cols-3 gap-1.5">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('1')">1</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('2')">2</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('3')">3</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('4')">4</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('5')">5</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('6')">6</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('7')">7</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('8')">8</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('9')">9</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('.')">.</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-lg font-bold transition-colors active:scale-95" onclick="pressKey('0')">0</button>
+<button class="h-11 rounded-lg bg-error-container hover:bg-error/20 text-on-error-container flex items-center justify-center transition-colors active:scale-95" onclick="pressBackspace()">
+<span class="material-symbols-outlined text-[20px]">backspace</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-2.5">
+<button class="py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-sm font-semibold flex items-center justify-center gap-1" onclick="nextLane()">
+<span>Next Lane</span>
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</button>
+<button class="py-2 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-body-md text-body-sm font-semibold shadow-sm flex items-center justify-center gap-1" onclick="commitTime()">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Commit</span>
+</button>
+</div>
+</div>
+<!-- PREVIOUS HEATS LOG / STANDINGS MINI PANEL -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-body-lg font-bold text-on-surface">Round 1 Consolidated</h2>
+<span class="font-label-caps text-label-caps bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Live Cutoff</span>
+</div>
+<!-- HEAT 1 MINI SUMMARY -->
+<div class="rounded-lg bg-surface-container-low p-space-sm space-y-2">
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-semibold text-primary">Heat 1 Results</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Official Finish</span>
+</div>
+<div class="space-y-1.5">
+<!-- Item 1 -->
+<div class="flex items-center justify-between text-body-sm bg-surface-container-lowest p-2 rounded">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-data-metric text-[12px] font-bold px-1.5 py-0.5 rounded bg-surface-container">#579</span>
+<span class="truncate font-medium text-on-surface">R. Mallikarjuna</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-data-metric text-body-sm font-bold text-on-surface">12.69s</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">IV</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between text-body-sm bg-surface-container-lowest p-2 rounded">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-data-metric text-[12px] font-bold px-1.5 py-0.5 rounded bg-surface-container">#837</span>
+<span class="truncate font-medium text-on-surface">D. Chidambaram</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-data-metric text-body-sm font-bold text-on-surface">12.94s</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">VI</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between text-body-sm bg-surface-container-lowest p-2 rounded">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-data-metric text-[12px] font-bold px-1.5 py-0.5 rounded bg-surface-container">#365</span>
+<span class="truncate font-medium text-on-surface">S. Kulkarni</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-data-metric text-body-sm font-bold text-on-surface">13.16s</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">VIII</span>
+</div>
+</div>
+</div>
+</div>
+<!-- HEAT 2 MINI SUMMARY -->
+<div class="rounded-lg bg-surface-container-low p-space-sm space-y-2">
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-semibold text-primary">Heat 2 Results</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Official Finish</span>
+</div>
+<div class="space-y-1.5">
+<!-- Item 1 -->
+<div class="flex items-center justify-between text-body-sm bg-surface-container-lowest p-2 rounded">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-data-metric text-[12px] font-bold px-1.5 py-0.5 rounded bg-secondary-fixed text-secondary">#424</span>
+<span class="truncate font-medium text-on-surface">Mannem Sivanageswara</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-data-metric text-body-sm font-bold text-on-surface">12.52s</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-bold">Q (II)</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between text-body-sm bg-surface-container-lowest p-2 rounded">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-data-metric text-[12px] font-bold px-1.5 py-0.5 rounded bg-surface-container">#800</span>
+<span class="truncate font-medium text-on-surface">Pushparaj K.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-data-metric text-body-sm font-bold text-on-surface">12.88s</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">V</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CURRENT QUALIFICATION CUTOFF TICKER -->
+<div class="p-3 bg-surface-container rounded-lg space-y-1">
+<div class="flex items-center justify-between text-body-sm font-semibold text-on-surface">
+<span>8th Finalist Cutoff</span>
+<span class="text-secondary font-data-metric text-body-md font-bold">12.69s</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 87%"></div>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant">Fastest losers bubble currently held by BIB 579 &amp; BIB 853</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PROMOTE TO FINAL CONFIRMATION MODAL -->
+<div class="fixed inset-0 z-50 bg-tertiary/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="promoteModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-4xl w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="p-space-lg bg-tertiary text-on-tertiary flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[28px] text-secondary">military_tech</span>
+<div>
+<h2 class="font-headline-md text-headline-md tracking-tight">Confirm Promotion to 100m Final</h2>
+<p class="font-body-sm text-body-sm text-tertiary-fixed-dim">Event #01 · 100m Men (Below 45 Yrs) · Seeded Lane Allocation (AFI Rules)</p>
+</div>
+</div>
+<button class="text-tertiary-fixed-dim hover:text-on-tertiary p-1 rounded-lg" id="closeModalBtn">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Modal Body (8 Finalists Lineup Table) -->
+<div class="p-space-lg space-y-space-md max-h-[716px] overflow-y-auto">
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-lg">
+<div class="font-body-md text-body-md font-semibold text-on-surface">Finalists Roster: 6 Automatic Qualifiers (Q) + 2 Fastest Non-Automatic (q)</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-caps text-label-caps font-bold">Scheduled: 16:30 hrs Today</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase">
+<th class="py-2.5 px-3 w-16 text-center">Final Lane</th>
+<th class="py-2.5 px-3 w-20">BIB</th>
+<th class="py-2.5 px-3">Athlete</th>
+<th class="py-2.5 px-3">Unit / Zone</th>
+<th class="py-2.5 px-3 text-right">Heat Time</th>
+<th class="py-2.5 px-3 text-center">Orig Heat</th>
+<th class="py-2.5 px-3 text-center">Entry Basis</th>
+</tr>
+</thead>
+<tbody class="text-body-sm divide-y-0">
+<tr class="bg-surface-container-low/50">
+<td class="py-2 px-3 text-center font-bold text-primary">Lane 1</td>
+<td class="py-2 px-3 font-data-metric font-bold">#800</td>
+<td class="py-2 px-3 font-semibold text-on-surface">Pushparaj K.</td>
+<td class="py-2 px-3">South Central</td>
+<td class="py-2 px-3 text-right font-data-metric font-bold">12.88s</td>
+<td class="py-2 px-3 text-center">Heat 2</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-surface-container text-tertiary font-label-caps text-[10px] font-bold">q (Reserve 1)</span></td>
+</tr>
+<tr>
+<td class="py-2 px-3 text-center font-bold text-primary">Lane 2</td>
+<td class="py-2 px-3 font-data-metric font-bold">#579</td>
+<td class="py-2 px-3 font-semibold text-on-surface">Ramath Mallikarjuna</td>
+<td class="py-2 px-3">North West</td>
+<td class="py-2 px-3 text-right font-data-metric font-bold">12.69s</td>
+<td class="py-2 px-3 text-center">Heat 1</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-surface-container text-tertiary font-label-caps text-[10px] font-bold">q (Fastest 2)</span></td>
+</tr>
+<tr class="bg-surface-container-low/50">
+<td class="py-2 px-3 text-center font-bold text-primary">Lane 3</td>
+<td class="py-2 px-3 font-data-metric font-bold">#612</td>
+<td class="py-2 px-3 font-semibold text-on-surface">Rajeshwar Rao</td>
+<td class="py-2 px-3">South Central</td>
+<td class="py-2 px-3 text-right font-data-metric font-bold">12.59s</td>
+<td class="py-2 px-3 text-center">Heat 3</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-[10px] font-bold">Q (Rank 2)</span></td>
+</tr>
+<!-- Top Seed Lanes (4 and 5) -->
+<tr class="bg-surface-container-highest/30">
+<td class="py-2 px-3 text-center font-headline-sm font-bold text-secondary">Lane 4</td>
+<td class="py-2 px-3 font-data-metric font-bold">#330</td>
+<td class="py-2 px-3 font-semibold text-on-surface">Abhinav Singh</td>
+<td class="py-2 px-3">Mumbai Refinery</td>
+<td class="py-2 px-3 text-right font-data-metric font-bold text-secondary">12.48s</td>
+<td class="py-2 px-3 text-center">Heat 3</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-label-caps text-[10px] font-bold">Top Seed (Q)</span></td>
+</tr>
+<tr class="bg-surface-container-highest/30">
+<td class="py-2 px-3 text-center font-headline-sm font-bold text-secondary">Lane 5</td>
+<td class="py-2 px-3 font-data-metric font-bold">#424</td>
+<td class="py-2 px-3 font-semibold text-on-surface">Mannem Sivanageswara</td>
+<td class="py-2 px-3">Mumbai Refinery</td>
+<td class="py-2 px-3 text-right font-data-metric font-bold text-secondary">12.52s</td>
+<td class="py-2 px-3 text-center">Heat 2</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-label-caps text-[10px] font-bold">2nd Seed (Q)</span></td>
+</tr>
+<tr>
+<td class="py-2 px-3 text-center font-bold text-primary">Lane 6</td>
+<td class="py-2 px-3 font-data-metric font-bold">#853</td>
+<td class="py-2 px-3 font-semibold text-on-surface">G. Ramanjaneyulu</td>
+<td class="py-2 px-3">Visakh Refinery</td>
+<td class="py-2 px-3 text-right font-data-metric font-bold">12.67s</td>
+<td class="py-2 px-3 text-center">Heat 3</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-surface-container text-tertiary font-label-caps text-[10px] font-bold">q (Fastest 1)</span></td>
+</tr>
+<tr class="bg-surface-container-low/50">
+<td class="py-2 px-3 text-center font-bold text-primary">Lane 7</td>
+<td class="py-2 px-3 font-data-metric font-bold">#210</td>
+<td class="py-2 px-3 font-semibold text-on-surface">B. Narayana Rao</td>
+<td class="py-2 px-3">Mumbai Refinery</td>
+<td class="py-2 px-3 text-right font-data-metric font-bold">12.61s</td>
+<td class="py-2 px-3 text-center">Heat 1</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-[10px] font-bold">Q (Rank 1)</span></td>
+</tr>
+<tr>
+<td class="py-2 px-3 text-center font-bold text-primary">Lane 8</td>
+<td class="py-2 px-3 font-data-metric font-bold">#711</td>
+<td class="py-2 px-3 font-semibold text-on-surface">Pradeep Verma</td>
+<td class="py-2 px-3">North West</td>
+<td class="py-2 px-3 text-right font-data-metric font-bold">12.65s</td>
+<td class="py-2 px-3 text-center">Heat 2</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-[10px] font-bold">Q (Rank 1)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">notification_important</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>System Notice:</strong> Confirming promotion will automatically generate the <em>Format 4 Official Start List (Final)</em>, sync with the Main Stadium Scoreboard, and lock Round 1 Heats for modification.
+          </div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-lg bg-surface-container-low flex flex-wrap items-center justify-between gap-3">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md font-semibold hover:bg-surface-container-high transition-colors" id="cancelModalBtn">
+          Cancel &amp; Return to Sheet
+        </button>
+<div class="flex items-center gap-3">
+<button class="px-space-lg py-2.5 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary font-body-md text-body-md font-semibold shadow-md transition-all active:scale-[0.98]" onclick="commitFinalPromotion()">
+            Commit &amp; Publish Final Start List
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let currentActiveInput = null;
+
+  function setActiveInput(inputElement, lane, athleteName, bib) {
+    currentActiveInput = inputElement;
+    document.getElementById('activeLaneBadge').innerText = 'LANE ' + lane;
+    document.getElementById('activeAthleteLabel').innerText = athleteName + ' (' + bib + ')';
+    document.getElementById('keypadDisplay').innerText = inputElement.value || '0.00';
+  }
+
+  function focusLaneInput(laneNo) {
+    const row = document.querySelector(`tr[data-lane="${laneNo}"]`);
+    if (row) {
+      const input = row.querySelector('.lane-time-input');
+      if (input) {
+        input.focus();
+      }
+    }
+  }
+
+  function pressKey(val) {
+    let display = document.getElementById('keypadDisplay');
+    if (display.innerText === '0.00' || display.innerText === '12.48') {
+      display.innerText = val;
+    } else {
+      display.innerText += val;
+    }
+    if (currentActiveInput) {
+      currentActiveInput.value = display.innerText;
+    }
+  }
+
+  function pressBackspace() {
+    let display = document.getElementById('keypadDisplay');
+    if (display.innerText.length > 0) {
+      display.innerText = display.innerText.slice(0, -1);
+    }
+    if (display.innerText === '') {
+      display.innerText = '0.00';
+    }
+    if (currentActiveInput) {
+      currentActiveInput.value = display.innerText;
+    }
+  }
+
+  function nextLane() {
+    if (!currentActiveInput) return;
+    const currentRow = currentActiveInput.closest('tr');
+    const nextRow = currentRow.nextElementSibling;
+    if (nextRow) {
+      const nextInput = nextRow.querySelector('.lane-time-input');
+      if (nextInput) nextInput.focus();
+    }
+  }
+
+  function commitTime() {
+    if (currentActiveInput) {
+      const originalValue = currentActiveInput.value;
+      const row = currentActiveInput.closest('tr');
+      const badge = row.querySelector('span:has(.material-symbols-outlined)');
+      
+      currentActiveInput.classList.add('bg-primary-fixed');
+      setTimeout(() => {
+        currentActiveInput.classList.remove('bg-primary-fixed');
+      }, 500);
+      nextLane();
+    }
+  }
+
+  function sortGridByPerformance() {
+    const tbody = document.getElementById('heatTableBody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+    rows.sort((a, b) => {
+      const timeA = parseFloat(a.querySelector('.lane-time-input').value) || 999;
+      const timeB = parseFloat(b.querySelector('.lane-time-input').value) || 999;
+      return timeA - timeB;
+    });
+
+    tbody.innerHTML = '';
+    rows.forEach(r => tbody.appendChild(r));
+  }
+
+  function switchHeat(heatNum) {
+    const tabs = [document.getElementById('tabHeat1'), document.getElementById('tabHeat2'), document.getElementById('tabHeat3')];
+    tabs.forEach((tab, index) => {
+      if (index + 1 === heatNum) {
+        tab.className = 'flex items-center gap-2 px-space-md py-2 rounded-lg font-body-md text-body-md bg-primary text-on-primary shadow-sm font-semibold';
+      } else {
+        tab.className = 'flex items-center gap-2 px-space-md py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container transition-colors';
+      }
+    });
+  }
+
+  // Modal interactions
+  const promoteModal = document.getElementById('promoteModal');
+  const promoteModalBtn = document.getElementById('promoteModalBtn');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const cancelModalBtn = document.getElementById('cancelModalBtn');
+
+  if (promoteModalBtn) {
+    promoteModalBtn.addEventListener('click', () => {
+      promoteModal.classList.remove('hidden');
+    });
+  }
+
+  const hideModal = () => promoteModal.classList.add('hidden');
+  if (closeModalBtn) closeModalBtn.addEventListener('click', hideModal);
+  if (cancelModalBtn) cancelModalBtn.addEventListener('click', hideModal);
+
+  function commitFinalPromotion() {
+    hideModal();
+    alert('Success! Format 4 Generated. Top 8 Athletes promoted to Men 100m Final. Roster synchronized with central scoreboard.');
+  }
+
+  // Set default initial active
+  window.addEventListener('DOMContentLoaded', () => {
+    const initialInput = document.querySelector('tr[data-lane="4"] .lane-time-input');
+    if (initialInput) {
+      setActiveInput(initialInput, '4', 'Abhinav Singh', '#330');
+    }
+  });
+</script></main></div></body></html>

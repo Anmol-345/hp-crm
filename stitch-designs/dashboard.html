@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-highest": "#dee0ff",
+          "inverse-on-surface": "#f0efff",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-background": "#131939",
+          "on-secondary": "#ffffff",
+          "on-primary-container": "#8e9cfe",
+          "tertiary-fixed-dim": "#bbc3ff",
+          "on-tertiary-fixed-variant": "#374184",
+          "surface-variant": "#dee0ff",
+          "on-secondary-container": "#fffbff",
+          "on-error": "#ffffff",
+          "outline": "#767683",
+          "on-surface": "#131939",
+          "surface-dim": "#d3d8ff",
+          "on-primary-fixed": "#000d5f",
+          "surface-bright": "#fbf8ff",
+          "secondary-fixed-dim": "#ffb3ad",
+          "on-tertiary-container": "#949ee9",
+          "secondary": "#bb001a",
+          "secondary-fixed": "#ffdad6",
+          "tertiary-container": "#293376",
+          "on-error-container": "#93000a",
+          "surface-container-high": "#e5e6ff",
+          "primary-fixed-dim": "#bbc3ff",
+          "inverse-primary": "#bbc3ff",
+          "on-primary-fixed-variant": "#2e3d9a",
+          "primary-container": "#1f2e8c",
+          "surface-container": "#ececff",
+          "on-tertiary-fixed": "#051158",
+          "surface": "#fbf8ff",
+          "error": "#ba1a1a",
+          "outline-variant": "#c6c5d4",
+          "inverse-surface": "#282e4f",
+          "primary-fixed": "#dfe0ff",
+          "on-secondary-fixed": "#410003",
+          "error-container": "#ffdad6",
+          "on-secondary-fixed-variant": "#930012",
+          "secondary-container": "#e4202b",
+          "primary": "#001375",
+          "tertiary-fixed": "#dfe0ff",
+          "on-surface-variant": "#454652",
+          "surface-container-low": "#f4f2ff",
+          "tertiary": "#101b60",
+          "surface-tint": "#4856b3"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "gutter-desktop": "1.5rem",
+          "space-xl": "2rem",
+          "space-md": "1rem",
+          "margin-desktop": "2rem",
+          "gutter": "1rem",
+          "margin": "1rem"
+        },
+        "fontFamily": {
+          "label-caps": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "data-metric": [
+            "Space Grotesk"
+          ],
+          "headline-md": [
+            "Space Grotesk"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "display-hero-mobile": [
+            "Space Grotesk"
+          ],
+          "headline-lg-mobile": [
+            "Space Grotesk"
+          ],
+          "table-data": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Space Grotesk"
+          ],
+          "headline-lg": [
+            "Space Grotesk"
+          ],
+          "display-hero": [
+            "Space Grotesk"
+          ]
+        },
+        "fontSize": {
+          "label-caps": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "data-metric": [
+            "28px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "26px",
+            {
+              "lineHeight": "34px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "table-data": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-hero": [
+            "44px",
+            {
+              "lineHeight": "52px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-tertiary text-on-tertiary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="flex flex-col"><div class="p-space-lg flex items-center gap-3 bg-tertiary-container/30"><img alt="HP Sports Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAVnRS3BIhdfgkddIBLtzBypoTkq8zIFYyyFpO7QUmJG06SQA7nwC6PzHqIBZJltIw2eoyOE5pkd4M0QTmfY2jOBtvHI94TYxzZpgNa8ku1VUQ7flU9lQhSfr3vYeVDDASy5EbtWg97C7N0uKSnDG2Y7FAdBKLicdcUdhRR7gis4KcjA93LOBzpUNdLpZszbKsvmc2Uqhqg5_r09blNLxd7-HFSMRzelACDGBCu7A"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-tertiary tracking-tight leading-tight">HP Sports Meet CRM</span><span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-wider mt-0.5">19th All India Annual Meet 2024-25</span></div></div><div class="px-space-md py-space-sm"><span class="font-label-caps text-label-caps text-tertiary-fixed-dim/80 px-space-sm uppercase tracking-wider">Championship Management</span></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a aria-current="page" class="flex items-center gap-3 px-space-md py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="events" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-md text-body-md">Events</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="heats" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span class="font-body-md text-body-md">Heats (Official Record)</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="results-entry" href="#"><span class="material-symbols-outlined text-[20px]">edit_note</span><span class="font-body-md text-body-md">Results Entry</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="cash-cards" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-md text-body-md">Cash Cards (Format 3)</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="athletes-profiles" href="#"><span class="material-symbols-outlined text-[20px]">directions_run</span><span class="font-body-md text-body-md">Athletes &amp; Profiles</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="units-zones" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-md text-body-md">Units / Zones</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="reports-medals" href="#"><span class="material-symbols-outlined text-[20px]">military_tech</span><span class="font-body-md text-body-md">Reports &amp; Medals</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="data-quality" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-md text-body-md">Data Quality</span></div><span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary px-2 py-0.5 rounded-full">Audit</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="settings-scales" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Settings &amp; Scales</span></a></nav></div><div class="p-space-md bg-tertiary-container/20 m-space-md rounded-xl"><div class="flex items-center gap-2 mb-1"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-tertiary-fixed-dim">Live Meet Status</span></div><p class="font-body-sm text-body-sm text-on-tertiary font-medium">Track Active · Lane Cameras Synced</p><p class="font-body-sm text-body-sm text-tertiary-fixed-dim/70 text-[11px] mt-0.5">Field Operations Gate 3</p></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search athletes, BIBs &amp; events (e.g. 100m, BIB-402)..." type="text"/></div><div class="hidden xl:flex items-center gap-1.5 text-on-surface-variant whitespace-nowrap"><span class="material-symbols-outlined text-[18px] text-secondary">location_on</span><span class="font-body-sm text-body-sm font-medium">HPCL Sports Complex, Chembur, Mumbai</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-high p-1 rounded-lg"><button class="px-space-md py-1 rounded-md font-label-caps text-label-caps bg-primary text-on-primary shadow-sm">Day 1 · 28 Feb 2025</button><button class="px-space-md py-1 rounded-md font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors">Day 2 · 01 Mar 2025</button></div><button class="flex items-center gap-1.5 px-space-md py-2 bg-secondary-container hover:bg-secondary text-on-secondary rounded-lg font-body-md text-body-md font-semibold shadow-sm transition-colors whitespace-nowrap"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>Record Result</span></button><div class="h-8 w-px bg-outline-variant/60 hidden sm:block"></div><div class="flex items-center gap-2.5 pl-1"><div class="text-right hidden md:block"><div class="font-body-md text-body-md font-semibold text-on-surface leading-tight">R. Sharma</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Track Official</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Dynamic Operational Canvas Wrapper -->
+<div class="p-space-lg lg:p-margin-desktop flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full">
+<!-- Top Welcome Banner & Command Bar -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-tertiary via-primary to-primary-container p-space-lg text-on-primary shadow-md">
+<!-- Decorative Track-Line Geometric Waves -->
+<div class="absolute -right-12 -top-24 w-96 h-96 rounded-full bg-secondary/15 blur-3xl pointer-events-none"></div>
+<div class="absolute right-36 bottom-0 w-80 h-32 bg-primary-fixed/10 skew-x-12 pointer-events-none"></div>
+<svg class="absolute right-0 top-0 h-full w-1/3 opacity-10 pointer-events-none" fill="none" viewbox="0 0 400 200">
+<path d="M0 160 C 120 160, 180 40, 400 20" stroke="currentColor" stroke-linecap="round" stroke-width="12"></path>
+<path d="M0 190 C 140 190, 200 70, 400 50" stroke="currentColor" stroke-linecap="round" stroke-width="8"></path>
+<path d="M0 220 C 160 220, 220 100, 400 80" stroke="currentColor" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1.5 max-w-3xl">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary font-label-caps text-label-caps tracking-wider uppercase shadow-sm">
+<span class="w-2 h-2 rounded-full bg-surface-container-lowest animate-ping"></span>
+              Live Operational Control
+            </span>
+<span class="px-3 py-1 rounded-full bg-tertiary-container/80 text-tertiary-fixed font-label-caps text-label-caps">
+              Day 1 Live · Session 2 in Progress (Chembur Complex)
+            </span>
+<span class="font-body-sm text-body-sm text-tertiary-fixed-dim/90 font-medium">
+              Official Track System Synced
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-on-tertiary mt-1">
+            19th All India HP Annual Sports Meet 2024-25
+          </h1>
+<p class="font-body-md text-body-md text-tertiary-fixed-dim max-w-2xl">
+            Real-time track adjudication, photo-finish validation, cash card disbursement (Format 3), and Zonal &amp; Refinery Championship points audit.
+          </p>
+</div>
+<!-- Quick Action Trigger Group -->
+<div class="flex flex-wrap items-center gap-2.5 mt-2 xl:mt-0">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary font-body-md text-body-md font-semibold transition-all transform active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span>+ Record Heat</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container font-body-md text-body-md font-semibold transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span>+ Disburse Cash Card</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-tertiary-container/90 hover:bg-tertiary-container text-on-tertiary font-body-md text-body-md font-medium transition-all">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>Print Format 3</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Key Metric KPI Cards (5 Metrics Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Metric 1: Events -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Meet Program</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">sports_score</span>
+</span>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface">88 Events</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 font-medium">Championship Schedule</p>
+</div>
+<div class="pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-1">
+<div class="flex justify-between font-label-caps text-label-caps">
+<span class="text-on-surface-variant">34 Done</span>
+<span class="text-secondary font-semibold">12 Running</span>
+<span class="text-on-surface-variant">42 Left</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 38.6%"></div>
+<div class="bg-secondary-container h-full animate-pulse" style="width: 13.6%"></div>
+<div class="bg-outline-variant h-full" style="width: 47.8%"></div>
+</div>
+</div>
+</div>
+<!-- Metric 2: Athletes -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Roster &amp; Creds</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</span>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface">462 Athletes</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 font-medium">Track, Field &amp; Veterans</p>
+</div>
+<div class="flex items-center gap-1.5 text-primary bg-primary-fixed/30 rounded-lg p-2">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-caps text-label-caps font-semibold">100% Biometrics Verified</span>
+</div>
+</div>
+<!-- Metric 3: Zones -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Contenders</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+</span>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface">7 Units / Zones</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 font-medium">2 Refineries · 5 Zones &amp; HQ</p>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low rounded-lg p-2">
+<span>MR &amp; VR Leading</span>
+<span class="font-label-caps text-label-caps text-primary font-bold">14 Teams Total</span>
+</div>
+</div>
+<!-- Metric 4: Prize Disbursal -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Prize Disbursed</span>
+<span class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">currency_rupee</span>
+</span>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface">₹3.42L <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">/ 5.28L</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 font-medium">64.8% Disbursed to Podium</p>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 64.8%"></div>
+</div>
+</div>
+<!-- Metric 5: Cash Cards Format 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Format 3 Status</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+</span>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface">68% Signed</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 font-medium">82 Signed · 38 Pending Audit</p>
+</div>
+<div class="flex items-center justify-between font-label-caps text-label-caps bg-surface-container-low rounded-lg p-2">
+<span class="text-secondary font-bold">38 Awaiting Athlete Sign</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">pending_actions</span>
+</div>
+</div>
+</div>
+<!-- Major Operations Grid: Medal Tally + Live Adjudication Feed -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left 7 Cols: Medal Tally by Unit & Interactive Standings Table -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<!-- Header and Toggle -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Unit Championship Standings</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Aggregate points across all Track, Field &amp; Corporate Veteran fixtures</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps bg-surface-container-high px-2.5 py-1 rounded text-on-surface font-semibold">Format 1 Medals</span>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Medal Distribution Stacked Bar Visualization -->
+<div class="bg-surface-container-low p-space-md rounded-xl mb-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Medal Distribution (Top 3 Units)</span>
+<div class="flex items-center gap-4 font-label-caps text-label-caps">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-400"></span>Gold</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-slate-300"></span>Silver</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-700"></span>Bronze</span>
+</div>
+</div>
+<!-- Stacked Visual Rings / Bars -->
+<div class="space-y-2">
+<div>
+<div class="flex justify-between font-body-sm text-body-sm font-semibold mb-1">
+<span>Mumbai Refinery (MR)</span>
+<span>28 Medals (12G / 9S / 7B)</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden flex">
+<div class="bg-amber-400 h-full" style="width: 42.8%" title="12 Gold"></div>
+<div class="bg-slate-300 h-full" style="width: 32.1%" title="9 Silver"></div>
+<div class="bg-amber-700 h-full" style="width: 25.1%" title="7 Bronze"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-body-sm text-body-sm font-semibold mb-1">
+<span>Visakh Refinery (VR)</span>
+<span>26 Medals (9G / 11S / 6B)</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden flex">
+<div class="bg-amber-400 h-full" style="width: 34.6%" title="9 Gold"></div>
+<div class="bg-slate-300 h-full" style="width: 42.3%" title="11 Silver"></div>
+<div class="bg-amber-700 h-full" style="width: 23.1%" title="6 Bronze"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-body-sm text-body-sm font-semibold mb-1">
+<span>South Central Zone (SCZ)</span>
+<span>22 Medals (7G / 6S / 9B)</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden flex">
+<div class="bg-amber-400 h-full" style="width: 31.8%" title="7 Gold"></div>
+<div class="bg-slate-300 h-full" style="width: 27.2%" title="6 Silver"></div>
+<div class="bg-amber-700 h-full" style="width: 41%" title="9 Bronze"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Standings Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-high/60 text-on-surface-variant font-label-caps text-label-caps">
+<th class="py-2.5 px-3 rounded-l-md">Rank &amp; Unit</th>
+<th class="py-2.5 px-3 text-center">Gold (1st)</th>
+<th class="py-2.5 px-3 text-center">Silver (2nd)</th>
+<th class="py-2.5 px-3 text-center">Bronze (3rd)</th>
+<th class="py-2.5 px-3 text-right">Total Medals</th>
+<th class="py-2.5 px-3 text-right rounded-r-md">Points</th>
+</tr>
+</thead>
+<tbody class="font-table-data text-table-data divide-y-0">
+<!-- Mumbai Refinery -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3 flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center">1</span>
+<div>
+<span class="font-semibold text-on-surface">Mumbai Refinery</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block text-xs">Host Zone / Refineries</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-center font-bold text-amber-700">12</td>
+<td class="py-2.5 px-3 text-center font-semibold text-slate-600">9</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-900">7</td>
+<td class="py-2.5 px-3 text-right font-bold text-on-surface tabular-nums">28</td>
+<td class="py-2.5 px-3 text-right font-headline-sm text-headline-sm text-primary tabular-nums">98</td>
+</tr>
+<!-- Visakh Refinery -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3 flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-slate-200 text-slate-800 font-bold text-xs flex items-center justify-center">2</span>
+<div>
+<span class="font-semibold text-on-surface">Visakh Refinery</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block text-xs">Coastal Refineries</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-center font-bold text-amber-700">9</td>
+<td class="py-2.5 px-3 text-center font-semibold text-slate-600">11</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-900">6</td>
+<td class="py-2.5 px-3 text-right font-bold text-on-surface tabular-nums">26</td>
+<td class="py-2.5 px-3 text-right font-headline-sm text-headline-sm text-primary tabular-nums">84</td>
+</tr>
+<!-- South Central Zone -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3 flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-amber-50 text-amber-900 font-bold text-xs flex items-center justify-center">3</span>
+<div>
+<span class="font-semibold text-on-surface">South Central Zone</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block text-xs">Secunderabad HQ</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-center font-bold text-amber-700">7</td>
+<td class="py-2.5 px-3 text-center font-semibold text-slate-600">6</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-900">9</td>
+<td class="py-2.5 px-3 text-right font-bold text-on-surface tabular-nums">22</td>
+<td class="py-2.5 px-3 text-right font-headline-sm text-headline-sm text-primary tabular-nums">68</td>
+</tr>
+<!-- Petroleum House -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3 flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant font-bold text-xs flex items-center justify-center">4</span>
+<div>
+<span class="font-semibold text-on-surface">Petroleum House</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block text-xs">Corporate HQ Mumbai</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-700">4</td>
+<td class="py-2.5 px-3 text-center font-semibold text-slate-600">5</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-900">3</td>
+<td class="py-2.5 px-3 text-right font-bold text-on-surface tabular-nums">12</td>
+<td class="py-2.5 px-3 text-right font-headline-sm text-headline-sm text-primary tabular-nums">40</td>
+</tr>
+<!-- North West Zone -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3 flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant font-bold text-xs flex items-center justify-center">5</span>
+<div>
+<span class="font-semibold text-on-surface">North West Zone</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block text-xs">Ahmedabad Hub</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-700">3</td>
+<td class="py-2.5 px-3 text-center font-semibold text-slate-600">4</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-900">5</td>
+<td class="py-2.5 px-3 text-right font-bold text-on-surface tabular-nums">12</td>
+<td class="py-2.5 px-3 text-right font-headline-sm text-headline-sm text-primary tabular-nums">36</td>
+</tr>
+<!-- East Zone -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3 flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant font-bold text-xs flex items-center justify-center">6</span>
+<div>
+<span class="font-semibold text-on-surface">East Zone</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block text-xs">Kolkata Operations</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-700">2</td>
+<td class="py-2.5 px-3 text-center font-semibold text-slate-600">3</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-900">4</td>
+<td class="py-2.5 px-3 text-right font-bold text-on-surface tabular-nums">9</td>
+<td class="py-2.5 px-3 text-right font-headline-sm text-headline-sm text-primary tabular-nums">29</td>
+</tr>
+<!-- Hindustan Bhawan -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3 flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant font-bold text-xs flex items-center justify-center">7</span>
+<div>
+<span class="font-semibold text-on-surface">Hindustan Bhawan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block text-xs">Marketing Ballard Estate</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-700">2</td>
+<td class="py-2.5 px-3 text-center font-semibold text-slate-600">2</td>
+<td class="py-2.5 px-3 text-center font-semibold text-amber-900">2</td>
+<td class="py-2.5 px-3 text-right font-bold text-on-surface tabular-nums">6</td>
+<td class="py-2.5 px-3 text-right font-headline-sm text-headline-sm text-primary tabular-nums">20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Points Formula: Gold = 5 pts, Silver = 3 pts, Bronze = 1 pt</span>
+<span class="text-primary font-semibold flex items-center gap-1 cursor-pointer hover:underline">
+            View Complete Scale Breakdown <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Right 5 Cols: Financial Disbursement & Live Adjudication Feed -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Cash Card & Prize Disbursement Donut Module -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Prize Money Audit</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Format 3 Cash Cards &amp; Finance Clearing</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-secondary font-label-caps text-label-caps font-semibold">
+              Live Finance Desk
+            </span>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md my-space-md">
+<!-- Inline SVG Donut Chart for Disbursement -->
+<div class="relative w-36 h-36 flex items-center justify-center shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle class="text-surface-container-high" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="12"></circle>
+<!-- Disbursed Slice (64.8%) -> 251.2 circum -> 162.7 stroke-dasharray -->
+<circle class="text-secondary-container" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="162.7 251.2" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Pending Signed Format 3 Slice (20%) -->
+<circle class="text-primary-container" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="35 251.2" stroke-dashoffset="-164" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-md text-headline-md text-on-surface font-bold leading-none">65%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase text-[10px] mt-0.5">Disbursed</span>
+</div>
+</div>
+<!-- Legend & Stats -->
+<div class="flex flex-col gap-2 w-full">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Disbursed to Athletes</span>
+</div>
+<span class="font-table-data text-table-data font-bold text-on-surface">₹3,42,000</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Signed (Clearing Desk)</span>
+</div>
+<span class="font-table-data text-table-data font-bold text-on-surface">₹1,12,000</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Awaiting Signature</span>
+</div>
+<span class="font-table-data text-table-data font-bold text-on-surface">₹74,000</span>
+</div>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Approved by HPCL Sports Committee</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-tertiary transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Format 3 Audit</span>
+</button>
+</div>
+</div>
+<!-- Official Track Photo-Finish & Track-side Camera Monitor -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">videocam</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Track Camera Feed</h2>
+</div>
+<span class="font-label-caps text-label-caps bg-secondary text-on-secondary px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-surface animate-pulse"></span>
+              LANE 1-8 LIVE
+            </span>
+</div>
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-on-surface flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-85" data-alt="Athletic track photo finish high speed camera capture showing professional runners sprinting across the white finish line with stadium floodlights and HPCL corporate sports banner in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyYD5pArvvdsr2F6bNxqN6AnOr5c61Y23Hjfk1USOWUq9SLzKAZQKKsT6GsGipQhbA7nHrMLIhFnNccr8-xFzfgaBH5-nYFoCasvIVckBkpqEisJ4MPetmsSAtjfAUJQQlFtO2dtHUHha7Td86ONki5UZl7yofKgFi_zMeHQFQ4bew0rO5ueVXsNxfqtsupqWxmsSzxe8QQ1jE1ALR4_bDGbxrWL7OVlScmZQkNg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+<div class="absolute top-2 left-3 flex items-center gap-2">
+<span class="px-2 py-0.5 bg-black/60 backdrop-blur text-white font-label-caps text-label-caps rounded">
+                CAM 02 · 100M FINISH LINE
+              </span>
+<span class="px-2 py-0.5 bg-black/60 backdrop-blur text-secondary font-label-caps text-label-caps rounded">
+                REC 120 FPS
+              </span>
+</div>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-white">
+<div>
+<div class="font-body-sm text-body-sm font-bold">Heat 04 · Men's 200m Final</div>
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim">Delta Precision: ±0.001 sec validated</div>
+</div>
+<button class="px-3 py-1 bg-white/20 hover:bg-white/30 backdrop-blur rounded font-label-caps text-label-caps text-white transition-colors">
+                Enlarge View
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Today's Track & Field Schedule List (With Live Status Accents) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-3">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Official Meet Order of Events</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Day 1 Track, Throw and Family Invitation Events Adjudication</p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center bg-surface-container p-1 rounded-lg">
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-primary font-label-caps text-label-caps font-semibold shadow-sm">All Fixtures</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps">Track</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps">Field Throws</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps">Spouse &amp; Family</button>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Schedule Matrix Items -->
+<div class="space-y-3">
+<!-- Event 2: Completed -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start md:items-center gap-space-md pl-1">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex flex-col items-center justify-center text-on-primary-fixed shrink-0">
+<span class="font-label-caps text-label-caps font-bold">EVT</span>
+<span class="font-headline-sm text-headline-sm font-bold leading-none">02</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">200m Run · Men (Below 45 Yrs)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-semibold">
+                  Track Event
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-caps text-label-caps font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Completed · 10:15 AM
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>Gold: <strong class="text-on-surface font-semibold">424 Mannem Sivanageswara</strong> (VR)</span>
+<span>•</span>
+<span>Timing: <strong class="text-on-surface font-semibold font-data-metric text-[16px]">26.25s</strong></span>
+<span>•</span>
+<span>Silver: 512 R. Deshmukh (MR - 26.89s)</span>
+<span>•</span>
+<span>Bronze: 301 A. Roy (EZ - 27.10s)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-primary font-label-caps text-label-caps font-semibold">
+              Format 3 Signed
+            </span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary font-body-sm text-body-sm font-medium transition-all shadow-sm">
+              View Slip
+            </button>
+</div>
+</div>
+<!-- Event 8: Completed -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start md:items-center gap-space-md pl-1">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex flex-col items-center justify-center text-on-primary-fixed shrink-0">
+<span class="font-label-caps text-label-caps font-bold">EVT</span>
+<span class="font-headline-sm text-headline-sm font-bold leading-none">08</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">400m Run · Men (45 to 55 Yrs)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-semibold">
+                  Veterans Track
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-caps text-label-caps font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Completed · 11:30 AM
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>Gold: <strong class="text-on-surface font-semibold">798 Narayana Moolya</strong> (MR)</span>
+<span>•</span>
+<span>Timing: <strong class="text-on-surface font-semibold font-data-metric text-[16px]">60.80s</strong></span>
+<span>•</span>
+<span>Silver: 114 P. Venkat (SCZ - 62.15s)</span>
+<span>•</span>
+<span>Cash Disbursed: ₹4,000</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-secondary font-label-caps text-label-caps font-semibold">
+              Cash Disbursed
+            </span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary font-body-sm text-body-sm font-medium transition-all shadow-sm">
+              View Slip
+            </button>
+</div>
+</div>
+<!-- Event 18: In Progress (Live) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border-l-4 border-secondary shadow-md hover:bg-surface-container-low transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md pl-1">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex flex-col items-center justify-center text-on-secondary shrink-0 animate-pulse">
+<span class="font-label-caps text-label-caps font-bold">EVT</span>
+<span class="font-headline-sm text-headline-sm font-bold leading-none">18</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Javelin Throw · Men (Below 45)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label-caps text-label-caps font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+                  In Progress · 02:00 PM
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-semibold">
+                  Field Pit B
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>Current Leader: <strong class="text-secondary font-bold">642 Khuntia P.A. Asitkanta</strong> (Mumbai Refinery)</span>
+<span>•</span>
+<span>Best Mark: <strong class="text-on-surface font-semibold font-data-metric text-[16px]">39.47m</strong> (Round 3)</span>
+<span>•</span>
+<span>2nd: BIB 231 K. Rathod (38.12m)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="px-4 py-2 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary font-body-md text-body-md font-semibold transition-all shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Record Attempt 4</span>
+</button>
+</div>
+</div>
+<!-- Event 48: Scheduled -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-outline-variant"></div>
+<div class="flex items-start md:items-center gap-space-md pl-1">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center text-on-surface-variant shrink-0">
+<span class="font-label-caps text-label-caps font-bold">EVT</span>
+<span class="font-headline-sm text-headline-sm font-bold leading-none">48</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Javelin Throw · Women (Below 40)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-semibold">
+                  Field Pit A
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps">
+                  Scheduled · 03:15 PM
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>Roster: <strong class="text-on-surface font-semibold">12 Registered Athletes</strong></span>
+<span>•</span>
+<span>Marshalling: Call Room 2 (Reporting Open)</span>
+<span>•</span>
+<span>Defending Champion: S. Mukherjee (East Zone)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium transition-colors">
+              Call Sheet
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary-container hover:text-on-primary-container font-body-sm text-body-sm font-medium transition-colors">
+              Ready Pit
+            </button>
+</div>
+</div>
+<!-- Event 87: Scheduled -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-outline-variant"></div>
+<div class="flex items-start md:items-center gap-space-md pl-1">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center text-on-surface-variant shrink-0">
+<span class="font-label-caps text-label-caps font-bold">EVT</span>
+<span class="font-headline-sm text-headline-sm font-bold leading-none">87</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">100m Run · Women (Below 45) Spouse Event</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-semibold">
+                  Family Invitation
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps">
+                  Scheduled · 04:30 PM
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>Roster: <strong class="text-on-surface font-semibold">16 Registered Participants</strong> (2 Heats of 8)</span>
+<span>•</span>
+<span>Main Track Straight · Photo Finish Active</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium transition-colors">
+              Lane Allotment
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary-container hover:text-on-primary-container font-body-sm text-body-sm font-medium transition-colors">
+              Marshalling Call
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Administrative Quick Links & Official Notes -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-3">
+<span class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Jury of Appeal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            0 protests filed. Technical delegate: Sh. A. K. Verma. All times auto-verified via Omegawave timing sensors.
+          </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-3">
+<span class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[24px]">medical_services</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Medical &amp; Physio Desk</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Paramedic station live at Gate 2. 2 mild strains treated and cleared for subsequent relay heats.
+          </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-3">
+<span class="p-2 rounded-lg bg-surface-container text-secondary">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Day 1 Medal Ceremony</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Scheduled for 05:45 PM at Central Podium. Director (HR) and CVO HPCL presiding over trophy distribution.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

@@ -1,0 +1,20 @@
+
+> indian-petroleum-crm@0.1.0 dev
+> next dev --webpack
+
+▲ Next.js 16.4.6 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.36:3000
+- Environments: .env.local
+✓ Ready in 2.3s
+⚠ Warning: Next.js ignored pnpm-lock.yaml in C:\Users\victus because it is outside the current Git repository (C:\Users\victus\Documents\My Codes\indian-petroleum-crm).
+ To use this directory, set `outputFileTracingRoot` in your Next.js config.
+
+✓ Running next.config.ts took 202ms
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+

@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-highest": "#dee0ff",
+          "inverse-on-surface": "#f0efff",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-background": "#131939",
+          "on-secondary": "#ffffff",
+          "on-primary-container": "#8e9cfe",
+          "tertiary-fixed-dim": "#bbc3ff",
+          "on-tertiary-fixed-variant": "#374184",
+          "surface-variant": "#dee0ff",
+          "on-secondary-container": "#fffbff",
+          "on-error": "#ffffff",
+          "outline": "#767683",
+          "on-surface": "#131939",
+          "surface-dim": "#d3d8ff",
+          "on-primary-fixed": "#000d5f",
+          "surface-bright": "#fbf8ff",
+          "secondary-fixed-dim": "#ffb3ad",
+          "on-tertiary-container": "#949ee9",
+          "secondary": "#bb001a",
+          "secondary-fixed": "#ffdad6",
+          "tertiary-container": "#293376",
+          "on-error-container": "#93000a",
+          "surface-container-high": "#e5e6ff",
+          "primary-fixed-dim": "#bbc3ff",
+          "inverse-primary": "#bbc3ff",
+          "on-primary-fixed-variant": "#2e3d9a",
+          "primary-container": "#1f2e8c",
+          "surface-container": "#ececff",
+          "on-tertiary-fixed": "#051158",
+          "surface": "#fbf8ff",
+          "error": "#ba1a1a",
+          "outline-variant": "#c6c5d4",
+          "inverse-surface": "#282e4f",
+          "primary-fixed": "#dfe0ff",
+          "on-secondary-fixed": "#410003",
+          "error-container": "#ffdad6",
+          "on-secondary-fixed-variant": "#930012",
+          "secondary-container": "#e4202b",
+          "primary": "#001375",
+          "tertiary-fixed": "#dfe0ff",
+          "on-surface-variant": "#454652",
+          "surface-container-low": "#f4f2ff",
+          "tertiary": "#101b60",
+          "surface-tint": "#4856b3"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "gutter-desktop": "1.5rem",
+          "space-xl": "2rem",
+          "space-md": "1rem",
+          "margin-desktop": "2rem",
+          "gutter": "1rem",
+          "margin": "1rem"
+        },
+        "fontFamily": {
+          "label-caps": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "data-metric": [
+            "Space Grotesk"
+          ],
+          "headline-md": [
+            "Space Grotesk"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "display-hero-mobile": [
+            "Space Grotesk"
+          ],
+          "headline-lg-mobile": [
+            "Space Grotesk"
+          ],
+          "table-data": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Space Grotesk"
+          ],
+          "headline-lg": [
+            "Space Grotesk"
+          ],
+          "display-hero": [
+            "Space Grotesk"
+          ]
+        },
+        "fontSize": {
+          "label-caps": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "data-metric": [
+            "28px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "26px",
+            {
+              "lineHeight": "34px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "table-data": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-hero": [
+            "44px",
+            {
+              "lineHeight": "52px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-tertiary text-on-tertiary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="flex flex-col"><div class="p-space-lg flex items-center gap-3 bg-tertiary-container/30"><img alt="HP Sports Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAVnRS3BIhdfgkddIBLtzBypoTkq8zIFYyyFpO7QUmJG06SQA7nwC6PzHqIBZJltIw2eoyOE5pkd4M0QTmfY2jOBtvHI94TYxzZpgNa8ku1VUQ7flU9lQhSfr3vYeVDDASy5EbtWg97C7N0uKSnDG2Y7FAdBKLicdcUdhRR7gis4KcjA93LOBzpUNdLpZszbKsvmc2Uqhqg5_r09blNLxd7-HFSMRzelACDGBCu7A"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-tertiary tracking-tight leading-tight">HP Sports Meet CRM</span><span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-wider mt-0.5">19th All India Annual Meet 2024-25</span></div></div><div class="px-space-md py-space-sm"><span class="font-label-caps text-label-caps text-tertiary-fixed-dim/80 px-space-sm uppercase tracking-wider">Championship Management</span></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="events" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-md text-body-md">Events</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="heats" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span class="font-body-md text-body-md">Heats (Official Record)</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="results-entry" href="#"><span class="material-symbols-outlined text-[20px]">edit_note</span><span class="font-body-md text-body-md">Results Entry</span></a><a aria-current="page" class="flex items-center gap-3 px-space-md py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="cash-cards" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-md text-body-md">Cash Cards (Format 3)</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="athletes-profiles" href="#"><span class="material-symbols-outlined text-[20px]">directions_run</span><span class="font-body-md text-body-md">Athletes &amp; Profiles</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="units-zones" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-md text-body-md">Units / Zones</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="reports-medals" href="#"><span class="material-symbols-outlined text-[20px]">military_tech</span><span class="font-body-md text-body-md">Reports &amp; Medals</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="data-quality" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-md text-body-md">Data Quality</span></div><span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary px-2 py-0.5 rounded-full">Audit</span></a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="settings-scales" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Settings &amp; Scales</span></a></nav></div><div class="p-space-md bg-tertiary-container/20 m-space-md rounded-xl"><div class="flex items-center gap-2 mb-1"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-tertiary-fixed-dim">Live Meet Status</span></div><p class="font-body-sm text-body-sm text-on-tertiary font-medium">Track Active · Lane Cameras Synced</p><p class="font-body-sm text-body-sm text-tertiary-fixed-dim/70 text-[11px] mt-0.5">Field Operations Gate 3</p></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search athletes, BIBs &amp; events (e.g. 100m, BIB-402)..." type="text"/></div><div class="hidden xl:flex items-center gap-1.5 text-on-surface-variant whitespace-nowrap"><span class="material-symbols-outlined text-[18px] text-secondary">location_on</span><span class="font-body-sm text-body-sm font-medium">HPCL Sports Complex, Chembur, Mumbai</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-high p-1 rounded-lg"><button class="px-space-md py-1 rounded-md font-label-caps text-label-caps bg-primary text-on-primary shadow-sm">Day 1 · 28 Feb 2025</button><button class="px-space-md py-1 rounded-md font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors">Day 2 · 01 Mar 2025</button></div><button class="flex items-center gap-1.5 px-space-md py-2 bg-secondary-container hover:bg-secondary text-on-secondary rounded-lg font-body-md text-body-md font-semibold shadow-sm transition-colors whitespace-nowrap"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>Record Result</span></button><div class="h-8 w-px bg-outline-variant/60 hidden sm:block"></div><div class="flex items-center gap-2.5 pl-1"><div class="text-right hidden md:block"><div class="font-body-md text-body-md font-semibold text-on-surface leading-tight">R. Sharma</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Track Official</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-lg py-space-md flex flex-col gap-space-md">
+<!-- Top Breadcrumb & Control Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-caps text-label-caps bg-primary text-on-primary px-2 py-0.5 rounded tracking-wider uppercase">Statutory Compliance</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">gavel</span> Financial Audit Track · Format 3
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Format 3: Cash Card Control Sheet</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          19th All India Annual Sports Meet 2024-25 · Official Prize Money Disbursement &amp; Athlete Signature Register
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-2.5">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container text-primary font-body-md text-body-md font-semibold hover:bg-surface-container-high transition-colors shadow-sm" id="togglePrintViewBtn">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print View (Format 3)</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container text-primary font-body-md text-body-md font-semibold hover:bg-surface-container-high transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-body-md text-body-md font-semibold hover:bg-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Official PDF</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary font-body-md text-body-md font-semibold shadow-sm transition-colors" onclick="document.getElementById('manualEntryModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Manual Cash Card Entry</span>
+</button>
+</div>
+</div>
+<!-- Summary Total Metric Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1: Total Cards -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Total Cards Issued</span>
+<span class="font-data-metric text-data-metric text-on-surface mt-1">120 <span class="font-headline-sm text-headline-sm text-on-surface-variant font-normal">Cards</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Approved across 40 Event Finals</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">credit_card</span>
+</div>
+</div>
+<!-- Metric 2: Total Budget -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Disbursement Budget</span>
+<span class="font-data-metric text-data-metric text-primary mt-1">₹5,28,000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Treasury Allocation ID: HP-TR-25</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[26px]">account_balance_wallet</span>
+</div>
+</div>
+<!-- Metric 3: Paid & Signed -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Paid &amp; Signed</span>
+<span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="font-data-metric text-data-metric text-on-surface mt-1">₹3,42,000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 font-medium">82 Athletes (68.3% Completed)</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">verified</span>
+</div>
+</div>
+<!-- Metric 4: Pending Signatures -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-wider font-bold">Pending Signatures</span>
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+</div>
+<span class="font-data-metric text-data-metric text-secondary mt-1">₹1,86,000</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">38 Athletes Verification Awaited</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">draw</span>
+</div>
+</div>
+</div>
+<!-- Filter Strip & Quick Status Selector -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider whitespace-nowrap pl-1">Filter Disciplines:</span>
+<button class="px-3 py-1.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary whitespace-nowrap">All Events</button>
+<button class="px-3 py-1.5 rounded-full font-label-caps text-label-caps bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors whitespace-nowrap">100m Run</button>
+<button class="px-3 py-1.5 rounded-full font-label-caps text-label-caps bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors whitespace-nowrap">200m Run</button>
+<button class="px-3 py-1.5 rounded-full font-label-caps text-label-caps bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors whitespace-nowrap">400m Run</button>
+<button class="px-3 py-1.5 rounded-full font-label-caps text-label-caps bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors whitespace-nowrap">Javelin Throw</button>
+</div>
+<div class="flex items-center gap-2 self-end md:self-auto">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Status:</span>
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1 rounded font-label-caps text-label-caps bg-surface-container-lowest text-primary shadow-sm">All (120)</button>
+<button class="px-3 py-1 rounded font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface">Signed (82)</button>
+<button class="px-3 py-1 rounded font-label-caps text-label-caps text-secondary font-bold hover:bg-secondary-fixed/40">Pending (38)</button>
+</div>
+</div>
+</div>
+<!-- Active High-Density Operational Matrix (Format 3 Register) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col" id="registerTableContainer">
+<!-- Register Meta Sub-header -->
+<div class="px-space-lg py-space-sm bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<span class="font-headline-sm text-headline-sm text-primary">Live Register · Chembur Sports Desk</span>
+<span class="font-label-caps text-label-caps bg-surface-container-highest text-primary-container px-2 py-0.5 rounded">Station 02 · Officer R. Sharma</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-body-sm text-body-sm">
+<span>Official Treasury Cash Cards</span>
+<span>Last Sync: <strong>Just now (Live)</strong></span>
+</div>
+</div>
+<!-- High Density Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4 w-16 text-center">S.No</th>
+<th class="py-3 px-4 min-w-[210px]">Event Specification</th>
+<th class="py-3 px-4 min-w-[170px]">Podium Rank</th>
+<th class="py-3 px-4 min-w-[240px]">Athlete &amp; Identification</th>
+<th class="py-3 px-4 min-w-[180px]">Unit / Zone</th>
+<th class="py-3 px-4 text-right min-w-[110px]">Prize Value</th>
+<th class="py-3 px-4 min-w-[190px]">Disbursement Status</th>
+<th class="py-3 px-4 text-center min-w-[160px]">Verification / Action</th>
+</tr>
+</thead>
+<tbody class="font-table-data text-table-data text-on-surface divide-y divide-transparent">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-primary font-bold">001</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 01: 100m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-amber-100 text-amber-900 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-amber-700">military_tech</span>
+                  Winner · Gold
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-data-metric text-body-sm font-bold">#424</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Mannem Sivanageswara</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">location_city</span>
+                  Mumbai Refinery
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-on-surface font-bold tabular-nums">
+                ₹5,000
+              </td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Signed &amp; Disbursed
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">28 Feb 2025 · 10:15 AM</span>
+</div>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-medium transition-colors" onclick="previewSignature('Mannem Sivanageswara', 'BIB #424', 'Mumbai Refinery', '₹5,000', '28 Feb 2025, 10:15 AM', 'SIG-424-MS')">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                  View Slip
+                </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-surface-container-low/20">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-primary font-bold">002</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 01: 100m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-slate-200 text-slate-800 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-slate-600">military_tech</span>
+                  Runner-up · Silver
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-data-metric text-body-sm font-bold">#330</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Abhinav Singh</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">location_city</span>
+                  Mumbai Refinery
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-on-surface font-bold tabular-nums">
+                ₹4,000
+              </td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Signed &amp; Disbursed
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">28 Feb 2025 · 10:22 AM</span>
+</div>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-medium transition-colors" onclick="previewSignature('Abhinav Singh', 'BIB #330', 'Mumbai Refinery', '₹4,000', '28 Feb 2025, 10:22 AM', 'SIG-330-AS')">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                  View Slip
+                </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-primary font-bold">003</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 01: 100m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-orange-100 text-orange-900 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-orange-700">military_tech</span>
+                  1st Runner-up · Bronze
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-data-metric text-body-sm font-bold">#800</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Pushparaj</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">hub</span>
+                  South Central Zone
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-on-surface font-bold tabular-nums">
+                ₹3,000
+              </td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Signed &amp; Disbursed
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">28 Feb 2025 · 10:30 AM</span>
+</div>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-medium transition-colors" onclick="previewSignature('Pushparaj', 'BIB #800', 'South Central Zone', '₹3,000', '28 Feb 2025, 10:30 AM', 'SIG-800-PR')">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                  View Slip
+                </button>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-surface-container-low/20">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-primary font-bold">007</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 03: 400m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-amber-100 text-amber-900 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-amber-700">military_tech</span>
+                  Winner · Gold
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-data-metric text-body-sm font-bold">#512</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Santosh Kumar S</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">location_city</span>
+                  Visakh Refinery
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-on-surface font-bold tabular-nums">
+                ₹5,000
+              </td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Signed &amp; Disbursed
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">28 Feb 2025 · 11:10 AM</span>
+</div>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-medium transition-colors" onclick="previewSignature('Santosh Kumar S', 'BIB #512', 'Visakh Refinery', '₹5,000', '28 Feb 2025, 11:10 AM', 'SIG-512-SK')">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                  View Slip
+                </button>
+</td>
+</tr>
+<!-- Row 8 (Pending) -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-secondary-fixed/15">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-secondary font-bold">008</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 03: 400m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-slate-200 text-slate-800 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-slate-600">military_tech</span>
+                  Runner-up · Silver
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-data-metric text-body-sm font-bold">#641</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Senthi Naresh Babu</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">hub</span>
+                  South Central Zone
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-secondary font-bold tabular-nums">
+                ₹4,000
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-secondary font-bold">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                  Pending Signature
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-secondary-container hover:bg-secondary text-on-secondary font-body-sm text-body-sm font-bold shadow-sm transition-colors" onclick="openSignatureModal('008', 'Senthi Naresh Babu', 'BIB #641', 'South Central Zone', '₹4,000', 'Event 03: 400m Run')">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+                  Capture Sign
+                </button>
+</td>
+</tr>
+<!-- Row 9 (Pending) -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-secondary-fixed/15">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-secondary font-bold">009</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 03: 400m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-orange-100 text-orange-900 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-orange-700">military_tech</span>
+                  1st Runner-up · Bronze
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-data-metric text-body-sm font-bold">#209</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Chaudhary Aditya Prakash</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">hub</span>
+                  North West Zone
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-secondary font-bold tabular-nums">
+                ₹3,000
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-secondary font-bold">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                  Pending Signature
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-secondary-container hover:bg-secondary text-on-secondary font-body-sm text-body-sm font-bold shadow-sm transition-colors" onclick="openSignatureModal('009', 'Chaudhary Aditya Prakash', 'BIB #209', 'North West Zone', '₹3,000', 'Event 03: 400m Run')">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+                  Capture Sign
+                </button>
+</td>
+</tr>
+<!-- Row 18 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-primary font-bold">018</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 18: Javelin Throw</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-amber-100 text-amber-900 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-amber-700">military_tech</span>
+                  Winner · Gold
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-data-metric text-body-sm font-bold">#711</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Khuntia P.A. Asitkanta</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">domain</span>
+                  Petroleum House
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-on-surface font-bold tabular-nums">
+                ₹5,000
+              </td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Signed &amp; Disbursed
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">28 Feb 2025 · 11:35 AM</span>
+</div>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-medium transition-colors" onclick="previewSignature('Khuntia P.A. Asitkanta', 'BIB #711', 'Petroleum House', '₹5,000', '28 Feb 2025, 11:35 AM', 'SIG-711-KP')">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                  View Slip
+                </button>
+</td>
+</tr>
+<!-- Row 19 (Featured Interactive Active Modal target) -->
+<tr class="bg-secondary-fixed/25 border-l-4 border-l-secondary">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-secondary font-bold">019</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 18: Javelin Throw</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-slate-200 text-slate-800 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-slate-600">military_tech</span>
+                  Runner-up · Silver
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-data-metric text-body-sm font-bold">#836</span>
+<div>
+<span class="font-body-md text-body-md font-bold text-on-surface block">Potluri Durga Prasad</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-tight">Active Desk Signee</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">location_city</span>
+                  Visakh Refinery
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-secondary font-bold tabular-nums">
+                ₹4,000
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-secondary font-bold">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+                  Signee Standing At Desk
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-md bg-secondary text-on-secondary font-body-sm text-body-sm font-bold shadow-md hover:bg-secondary/90 transition-all scale-105" onclick="openSignatureModal('019', 'Potluri Durga Prasad', 'BIB #836', 'Visakh Refinery', '₹4,000', 'Event 18: Javelin Throw · Men (&lt;45)')">
+<span class="material-symbols-outlined text-[18px]">touch_app</span>
+                  Capture Slip
+                </button>
+</td>
+</tr>
+<!-- Row 20 (Pending) -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-secondary-fixed/15">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-secondary font-bold">020</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 18: Javelin Throw</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Category (&lt;45)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-orange-100 text-orange-900 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-orange-700">military_tech</span>
+                  1st Runner-up · Bronze
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-data-metric text-body-sm font-bold">#189</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Ramath Mallikarjuna Naik</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">hub</span>
+                  North West Zone
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-secondary font-bold tabular-nums">
+                ₹3,000
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-secondary font-bold">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                  Pending Signature
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-secondary-container hover:bg-secondary text-on-secondary font-body-sm text-body-sm font-bold shadow-sm transition-colors" onclick="openSignatureModal('020', 'Ramath Mallikarjuna Naik', 'BIB #189', 'North West Zone', '₹3,000', 'Event 18: Javelin Throw')">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+                  Capture Sign
+                </button>
+</td>
+</tr>
+<!-- Row 34 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-primary font-bold">034</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 12: 200m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Veteran (55+)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-amber-100 text-amber-900 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-amber-700">military_tech</span>
+                  Winner · Gold
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-data-metric text-body-sm font-bold">#302</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Mondal Tapas Kumar</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">hub</span>
+                  East Zone
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-on-surface font-bold tabular-nums">
+                ₹5,000
+              </td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Signed &amp; Disbursed
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">28 Feb 2025 · 11:42 AM</span>
+</div>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-medium transition-colors" onclick="previewSignature('Mondal Tapas Kumar', 'BIB #302', 'East Zone', '₹5,000', '28 Feb 2025, 11:42 AM', 'SIG-302-MT')">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                  View Slip
+                </button>
+</td>
+</tr>
+<!-- Row 35 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-surface-container-low/20">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-primary font-bold">035</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 12: 200m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Veteran (55+)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-slate-200 text-slate-800 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-slate-600">military_tech</span>
+                  Runner-up · Silver
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-data-metric text-body-sm font-bold">#490</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Gupta Harish</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">domain</span>
+                  Hindustan Bhawan
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-on-surface font-bold tabular-nums">
+                ₹4,000
+              </td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Signed &amp; Disbursed
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">28 Feb 2025 · 11:48 AM</span>
+</div>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-medium transition-colors" onclick="previewSignature('Gupta Harish', 'BIB #490', 'Hindustan Bhawan', '₹4,000', '28 Feb 2025, 11:48 AM', 'SIG-490-GH')">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                  View Slip
+                </button>
+</td>
+</tr>
+<!-- Row 36 (Pending) -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-secondary-fixed/15">
+<td class="py-3 px-4 text-center font-data-metric text-body-md text-secondary font-bold">036</td>
+<td class="py-3 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Event 12: 200m Run</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Men Veteran (55+)</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-orange-100 text-orange-900 shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-orange-700">military_tech</span>
+                  1st Runner-up · Bronze
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-data-metric text-body-sm font-bold">#715</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">A. Shanmugam</span>
+</div>
+</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">hub</span>
+                  South Central Zone
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-data-metric text-body-md text-secondary font-bold tabular-nums">
+                ₹3,000
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-secondary font-bold">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                  Pending Signature
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-secondary-container hover:bg-secondary text-on-secondary font-body-sm text-body-sm font-bold shadow-sm transition-colors" onclick="openSignatureModal('036', 'A. Shanmugam', 'BIB #715', 'South Central Zone', '₹3,000', 'Event 12: 200m Run · Men (55+)')">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+                  Capture Sign
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Table Footer -->
+<div class="px-space-lg py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Showing 12 of 120 Total Disbursed Entries · Audit Registry #HPCL-2025-F3
+        </span>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface-container text-primary font-body-sm text-body-sm disabled:opacity-50">Prev</button>
+<span class="px-3 py-1 rounded bg-primary text-on-primary font-body-sm text-body-sm font-bold">1</span>
+<button class="px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm">2</button>
+<button class="px-3 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm">3</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm">Next</button>
+</div>
+</div>
+</div>
+<!-- Official Paper Format 3 Print Preview Container (Toggled via button) -->
+<div class="hidden bg-surface-container-lowest p-space-xl rounded-xl shadow-lg flex flex-col gap-6" id="printPreviewSheet">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container-high">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px]">receipt_long</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Hindustan Petroleum Corporation Limited</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Official Register Form No. 3 (Sports Welfare Directorate) · Chembur 2024-25</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-1.5 bg-primary text-on-primary font-body-md text-body-md font-semibold rounded-lg shadow-sm" onclick="window.print()">
+            Execute System Print
+          </button>
+<button class="px-3 py-1.5 bg-surface-container text-on-surface font-body-md text-body-md rounded-lg" id="closePrintPreviewBtn">
+            Close View
+          </button>
+</div>
+</div>
+<!-- Formal Watermark / Government Style Document Head -->
+<div class="text-center py-2 bg-surface-container-low rounded-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-wider">PRIZE MONEY / CASH CARD CONTROL REGISTER</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">Rule 14-B of All India Annual Corporate Sports Regulations</p>
+</div>
+<!-- Static Printable Representation -->
+<div class="grid grid-cols-3 gap-4 p-space-md bg-surface-container-low/50 rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<div><strong>Place of Event:</strong> HPCL Sports Complex, Chembur</div>
+<div><strong>Disbursement Officer:</strong> R. Sharma (ID: 44091)</div>
+<div><strong>Audit Officer:</strong> S. Venkatesh (Internal Audit)</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 pb-4">
+<div class="p-4 bg-surface-container-low rounded-lg text-center flex flex-col items-center justify-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant mb-6">Cashier / Disbursing Officer</span>
+<div class="h-0.5 w-40 bg-on-surface-variant/40 mb-1"></div>
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">R. Sharma · Track Field Dept</span>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg text-center flex flex-col items-center justify-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant mb-6">Organising Secretary Sign-off</span>
+<div class="h-0.5 w-40 bg-on-surface-variant/40 mb-1"></div>
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">K. Balasubramanian</span>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg text-center flex flex-col items-center justify-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant mb-6">Chief Sports Officer Approval</span>
+<div class="h-0.5 w-40 bg-on-surface-variant/40 mb-1"></div>
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">Executive Director (HR-Sports)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE MODAL OVERLAY: Digital Signature Capture Sheet (Default Open for Serial #019) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" id="signatureModal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col transform transition-all animate-fadeIn">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-tertiary text-on-tertiary flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[24px]">ink_pen</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps bg-secondary px-2 py-0.5 rounded text-on-secondary uppercase">Serial #019</span>
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-wider">Format 3 Official Acknowledgement</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-tertiary mt-0.5">Prize Disbursement &amp; Signature Capture</h3>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-on-tertiary transition-colors" onclick="closeSignatureModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Athlete & Prize Information Card -->
+<div class="p-space-lg flex flex-col gap-space-md bg-surface-container-low/40">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Athlete Name &amp; BIB</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5" id="modalAthleteName">Potluri Durga Prasad</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-data-metric text-body-sm font-bold" id="modalBib">BIB #836</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium" id="modalUnit">Visakh Refinery</span>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-center">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Prize Entitlement (Runner-up)</span>
+<span class="font-data-metric text-data-metric text-secondary font-bold" id="modalPrize">₹4,000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" id="modalEvent">Event 18: Javelin Throw · Men (&lt;45)</span>
+</div>
+</div>
+<!-- Verification Checklist -->
+<div class="flex flex-wrap items-center justify-between gap-2 px-space-sm">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" id="verifyBib" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface font-semibold cursor-pointer" for="verifyBib">
+              Verified Physical BIB &amp; HPCL Photo ID Card
+            </label>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container-highest text-primary-container px-2 py-0.5 rounded font-bold">
+            Cash Card Ref: CC-2025-0836
+          </span>
+</div>
+<!-- Signature Pad -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">draw</span>
+              Athlete Digital Touch / Stylus Sign-Off Box
+            </label>
+<button class="font-label-caps text-label-caps text-secondary font-bold hover:underline flex items-center gap-1" onclick="clearCanvas()">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Clear Screen
+            </button>
+</div>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-inner overflow-hidden">
+<canvas class="w-full h-44 cursor-crosshair touch-none bg-surface-container-lowest" height="180" id="signatureCanvas" width="600"></canvas>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-on-surface-variant/40" id="canvasPlaceholder">
+<span class="material-symbols-outlined text-[42px] mb-1">gesture</span>
+<span class="font-body-sm text-body-sm">Sign within this rectangular frame with finger or stylus</span>
+</div>
+<!-- Bottom Line Guide -->
+<div class="absolute bottom-6 left-12 right-12 h-px bg-surface-container-highest pointer-events-none flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant/40 text-[9px]">Athlete Signature Line (X)</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant/40 text-[9px]">Chembur Operations Desk</span>
+</div>
+</div>
+</div>
+<!-- Statutory Confirmation -->
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-relaxed bg-surface-container-low p-2.5 rounded-lg">
+<strong>Declaration:</strong> I hereby acknowledge receipt of the official HPCL Pre-funded Cash Card loaded with the authorized prize money of ₹4,000 as declared in the certified event records.
+        </p>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">security</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Timestamp &amp; GPS Geotag will be bound automatically</span>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2 bg-surface-container text-on-surface hover:bg-surface-container-high rounded-lg font-body-md text-body-md font-semibold transition-colors" onclick="closeSignatureModal()">
+            Cancel
+          </button>
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-2 bg-secondary-container hover:bg-secondary text-on-secondary rounded-lg font-body-md text-body-md font-bold shadow-md transition-all" onclick="saveAndDisburse()">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Save Signature &amp; Mark Disbursed</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Manual Entry Secondary Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" id="manualEntryModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md bg-primary text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px]">add_card</span>
+<h3 class="font-headline-sm text-headline-sm">Manual Cash Card Record (Format 3)</h3>
+</div>
+<button class="text-on-primary" onclick="document.getElementById('manualEntryModal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col gap-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Select Event Final</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Event 01: 100m Run · Men (&lt;45)</option>
+<option>Event 02: 200m Run · Men (&lt;45)</option>
+<option>Event 03: 400m Run · Men (&lt;45)</option>
+<option>Event 18: Javelin Throw · Men (&lt;45)</option>
+<option>Event 87: 100m Run · Women Spouse</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">BIB Number</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. 505" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Podium Position</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Winner - Gold (₹5,000)</option>
+<option>Runner-up - Silver (₹4,000)</option>
+<option>1st Runner-up - Bronze (₹3,000)</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Athlete Full Name</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Full name as per official badge" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Card Serial Reference #</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. HP-CC-99201" type="text"/>
+</div>
+</div>
+<div class="px-space-lg py-space-md bg-surface-container-low flex justify-end gap-2">
+<button class="px-4 py-2 bg-surface-container text-on-surface rounded-lg font-body-md text-body-md font-semibold" onclick="document.getElementById('manualEntryModal').classList.add('hidden')">Cancel</button>
+<button class="px-5 py-2 bg-secondary-container hover:bg-secondary text-on-secondary rounded-lg font-body-md text-body-md font-bold shadow-sm" onclick="document.getElementById('manualEntryModal').classList.add('hidden')">Commit to Register</button>
+</div>
+</div>
+</div>
+<!-- Signature Viewer Modal (For already signed rows) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" id="viewSignedModal">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md bg-primary text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm">Disbursement Slip &amp; Voucher</h3>
+</div>
+<button class="text-on-primary" onclick="document.getElementById('viewSignedModal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col gap-4 text-center">
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<div class="font-headline-md text-headline-md text-primary font-bold" id="viewSignAthlete">Mannem Sivanageswara</div>
+<div class="font-body-md text-body-md text-on-surface-variant mt-1" id="viewSignMeta">BIB #424 · Mumbai Refinery · ₹5,000</div>
+<div class="font-label-caps text-label-caps text-secondary font-bold uppercase mt-1" id="viewSignTime">Disbursed on 28 Feb 2025, 10:15 AM</div>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-xl shadow-inner flex flex-col items-center justify-center min-h-[120px]">
+<!-- Simulated Signature Vector -->
+<svg class="w-48 h-20 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 200 80">
+<path d="M20,60 C40,20 60,30 75,55 C90,80 100,20 120,45 C140,70 160,35 185,50"></path>
+<path d="M45,50 L160,50" opacity="0.4" stroke-dasharray="2 3"></path>
+</svg>
+<span class="font-label-caps text-label-caps text-on-surface-variant text-[10px] mt-1" id="viewSignHash">HASH: SHA256: 7fa98c89...</span>
+</div>
+<div class="text-left bg-surface-container-high/40 p-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<div><strong>Presiding Track Official:</strong> R. Sharma</div>
+<div><strong>Cash Card Kit Serial:</strong> CC-HPCL-2025-D1</div>
+<div><strong>Physical Identity Verified:</strong> Yes (Official RFID Pass)</div>
+</div>
+</div>
+<div class="px-space-lg py-space-sm bg-surface-container-low flex justify-end">
+<button class="px-5 py-2 bg-primary text-on-primary rounded-lg font-body-md text-body-md font-semibold" onclick="document.getElementById('viewSignedModal').classList.add('hidden')">Done</button>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript -->
+<script>
+    // Canvas touch/mouse signature drawing implementation
+    const canvas = document.getElementById('signatureCanvas');
+    const ctx = canvas.getContext('2d');
+    const placeholder = document.getElementById('canvasPlaceholder');
+    let isDrawing = false;
+    let hasDrawn = false;
+
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      return {
+        x: (clientX - rect.left) * (canvas.width / rect.width),
+        y: (clientY - rect.top) * (canvas.height / rect.height)
+      };
+    }
+
+    function startDrawing(e) {
+      isDrawing = true;
+      hasDrawn = true;
+      placeholder.style.display = 'none';
+      const pos = getPos(e);
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+      ctx.strokeStyle = '#001375'; // primary brand blue
+      ctx.lineWidth = 3.5;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+    }
+
+    function draw(e) {
+      if (!isDrawing) return;
+      e.preventDefault();
+      const pos = getPos(e);
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+    }
+
+    function stopDrawing() {
+      isDrawing = false;
+    }
+
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    window.addEventListener('mouseup', stopDrawing);
+
+    canvas.addEventListener('touchstart', startDrawing, { passive: false });
+    canvas.addEventListener('touchmove', draw, { passive: false });
+    window.addEventListener('touchend', stopDrawing);
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      placeholder.style.display = 'flex';
+      hasDrawn = false;
+    }
+
+    function openSignatureModal(sno, name, bib, unit, prize, eventName) {
+      document.getElementById('modalAthleteName').innerText = name;
+      document.getElementById('modalBib').innerText = bib;
+      document.getElementById('modalUnit').innerText = unit;
+      document.getElementById('modalPrize').innerText = prize;
+      document.getElementById('modalEvent').innerText = eventName;
+      clearCanvas();
+      document.getElementById('signatureModal').classList.remove('hidden');
+    }
+
+    function closeSignatureModal() {
+      document.getElementById('signatureModal').classList.add('hidden');
+    }
+
+    function saveAndDisburse() {
+      // Simulate instantaneous signature receipt confirmation
+      closeSignatureModal();
+      alert('Official Prize Disbursement Verified! Cash Card has been handed over and logged to Format 3 Central Treasury Register.');
+    }
+
+    function previewSignature(name, bib, unit, prize, date, hash) {
+      document.getElementById('viewSignAthlete').innerText = name;
+      document.getElementById('viewSignMeta').innerText = bib + ' · ' + unit + ' · ' + prize;
+      document.getElementById('viewSignTime').innerText = 'Disbursed on ' + date;
+      document.getElementById('viewSignHash').innerText = 'HASH: ' + hash + ' · CERTIFIED';
+      document.getElementById('viewSignedModal').classList.remove('hidden');
+    }
+
+    // Toggle Paper Print Format 3 sheet
+    const togglePrintBtn = document.getElementById('togglePrintViewBtn');
+    const closePrintBtn = document.getElementById('closePrintPreviewBtn');
+    const printSheet = document.getElementById('printPreviewSheet');
+    const registerTable = document.getElementById('registerTableContainer');
+
+    togglePrintBtn.addEventListener('click', () => {
+      printSheet.classList.toggle('hidden');
+      if (!printSheet.classList.contains('hidden')) {
+        printSheet.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    closePrintBtn.addEventListener('click', () => {
+      printSheet.classList.add('hidden');
+    });
+  </script>
+</div></main></div></body></html>
