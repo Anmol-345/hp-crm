@@ -22,6 +22,7 @@ import {
   LogOut,
   Radio,
   Camera,
+  Award,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { createClient } from "@/lib/supabase/client";
@@ -42,6 +43,7 @@ const navItems = [
   { name: "Cash Cards (Format 3)", href: "/cash-cards", icon: CreditCard, badge: "Format 3" },
   { name: "Athletes & Profiles", href: "/athletes", icon: Users },
   { name: "Units / Zones", href: "/units", icon: Building2 },
+  { name: "Sports Records", href: "/records", icon: Award, badge: "MR" },
   { name: "Event Gallery", href: "/gallery", icon: Camera },
   { name: "Data Quality", href: "/data-quality", icon: CheckCircle2, badge: "Audit" },
   { name: "Reports & Medals", href: "/reports", icon: BarChart3 },

@@ -19,3 +19,4 @@ export * from "./app-shell";
 export * from "./table-skeleton";
 export * from "./podium-photo-card";
 export * from "./gallery-view";
+export * from "./records-view";

@@ -131,4 +131,30 @@ export interface EventPhoto {
   isPodiumPhoto?: boolean;
 }
 
+export type RecordStatus = "Standing" | "Broken this Meet" | "Pending Ratification";
+
+export interface SportsRecord {
+  id: string;
+  eventNo: number;
+  eventName: string;
+  category: string;
+  eventType: EventType;
+  recordHolder: string;
+  bib?: string;
+  unit: string;
+  performance: number;
+  performanceDisplay: string;
+  unitMetric: PerformanceUnit;
+  yearSet: number;
+  edition: string;
+  location?: string;
+  status: RecordStatus;
+  brokenByAthlete?: string;
+  brokenPerformance?: number;
+  cashBonusEligible: boolean;
+  notes?: string;
+  updatedAt?: string;
+}
+
+
 

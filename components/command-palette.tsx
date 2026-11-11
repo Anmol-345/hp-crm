@@ -14,6 +14,7 @@ import {
   X,
   ArrowRight,
   Camera,
+  Award,
 } from "lucide-react";
 import { mockEvents, mockAthletes, mockUnits } from "@/lib/data/mock-data";
 
@@ -53,6 +54,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
     { name: "Cash Card Sheet (Format 3)", href: "/cash-cards", icon: CreditCard, category: "Navigation" },
     { name: "Units & Zones Medal Tally", href: "/units", icon: Building2, category: "Navigation" },
     { name: "Event Photo Gallery", href: "/gallery", icon: Camera, category: "Navigation" },
+    { name: "Sports Records & NMR", href: "/records", icon: Award, category: "Navigation" },
     { name: "Disbursement Reports", href: "/reports", icon: BarChart3, category: "Navigation" },
   ].filter((item) => item.name.toLowerCase().includes(q));
 
